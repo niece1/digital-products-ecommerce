@@ -71,8 +71,7 @@ a {
 
 .main .left_hand {
   position: relative;
-  background: url(../img/58886.jpg);
-  background-size: cover;
+  background: #fff;
 }
 
 .main .left_hand .left_hand_nav {
@@ -95,7 +94,7 @@ a {
 .main .left_hand .box {
   width: 90%;
   height: 80%;
-  background-color: #ffcc01;
+  background: url(../img/chalkboard.jpg);
   position: absolute;
   margin: 50px 0 0 150px;
   z-index: 2;
@@ -132,6 +131,38 @@ a {
   width: 100%;
   height: 100vh;
   vertical-align: bottom;
+}
+
+.slick-active img {
+  -webkit-animation-name: scaleUp;
+          animation-name: scaleUp;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
 }
 
 .hamburger_holder {

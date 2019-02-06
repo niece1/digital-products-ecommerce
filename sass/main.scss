@@ -54,9 +54,10 @@ a {
   grid-template-columns: 40% 60%;
   .left_hand {
     position: relative;
-    background: url(../img/58886.jpg);
+    background: #fff;
     
-    background-size: cover;
+    
+   
     .left_hand_nav {
       color: red;
       margin: 20px 0 0 0;
@@ -74,7 +75,7 @@ a {
     .box {
       width: 90%;
       height: 80%;
-      background-color: #ffcc01;
+      background: url(../img/chalkboard.jpg);
       position: absolute;
       margin: 50px 0 0 150px;
       z-index: 2;
@@ -109,6 +110,24 @@ a {
         }
       }
     }
+  }
+}
+
+
+.slick-active {
+  img {
+    animation-name: scaleUp;
+    animation-duration: 4s;  
+    animation-timing-function: ease;
+    animation-direction: reverse;
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15)
   }
 }
 
