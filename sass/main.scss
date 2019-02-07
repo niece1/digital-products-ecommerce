@@ -59,7 +59,7 @@ a {
     
    
     .left_hand_nav {
-      color: red;
+      color: #ffcc00;
       margin: 20px 0 0 0;
       font-size: 2rem;
       ul {
@@ -94,7 +94,7 @@ a {
 
     h6 {
       position: absolute;
-      color: red;
+      color: #ffcc00;
       top: 35px;
       left: 35px;
       z-index: 99;
@@ -110,6 +110,25 @@ a {
         }
       }
     }
+    .slider_arrows {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      .arrow_left {
+        border: 1px solid #fff;
+        float: left;
+        margin-right: 2px;
+        padding: 0 15px;
+        cursor: pointer;
+      }
+      .arrow_right {
+        border: 1px solid #fff;
+        float: right;
+        margin-left: 2px;
+        padding: 0 15px;
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -118,28 +137,28 @@ a {
   img {
     animation-name: scaleUp;
     animation-duration: 4s;  
-    animation-timing-function: ease;
-    animation-direction: reverse;
+    animation-timing-function: ease-out;
+    
   }
 }
 @keyframes scaleUp {
   0% {
-    transform: scale(1);
+    transform: scale(1.30);
   }
   100% {
-    transform: scale(1.15)
+    transform: scale(1)
   }
 }
 
-$bar-width: 40px;
-$bar-height: 4px;
-$bar-spacing: 10px;
+$bar-width: 35px;
+$bar-height: 3px;
+$bar-spacing: 8px;
 
 .hamburger_holder {
   position: absolute;
-  top: 35px;
+  top: 30px;
   
-  right: 35px;
+  right: 30px;
   
   margin: auto;
   width: $bar-width;

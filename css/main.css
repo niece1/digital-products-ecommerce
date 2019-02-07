@@ -75,7 +75,7 @@ a {
 }
 
 .main .left_hand .left_hand_nav {
-  color: red;
+  color: #ffcc00;
   margin: 20px 0 0 0;
   font-size: 2rem;
 }
@@ -116,7 +116,7 @@ a {
 
 .main .logo h6 {
   position: absolute;
-  color: red;
+  color: #ffcc00;
   top: 35px;
   left: 35px;
   z-index: 99;
@@ -133,45 +133,66 @@ a {
   vertical-align: bottom;
 }
 
+.main .logo .slider_arrows {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.main .logo .slider_arrows .arrow_left {
+  border: 1px solid #fff;
+  float: left;
+  margin-right: 2px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+.main .logo .slider_arrows .arrow_right {
+  border: 1px solid #fff;
+  float: right;
+  margin-left: 2px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
 .slick-active img {
   -webkit-animation-name: scaleUp;
           animation-name: scaleUp;
   -webkit-animation-duration: 4s;
           animation-duration: 4s;
-  -webkit-animation-timing-function: ease;
-          animation-timing-function: ease;
-  animation-direction: reverse;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
 }
 
 @-webkit-keyframes scaleUp {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
   }
   100% {
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes scaleUp {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
   }
   100% {
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 .hamburger_holder {
   position: absolute;
-  top: 35px;
-  right: 35px;
+  top: 30px;
+  right: 30px;
   margin: auto;
-  width: 40px;
-  height: 24px;
+  width: 35px;
+  height: 19px;
   cursor: pointer;
   z-index: 99;
 }
@@ -179,15 +200,15 @@ a {
 .hamburger_icon,
 .hamburger_icon:after,
 .hamburger_icon:before {
-  width: 40px;
-  height: 4px;
+  width: 35px;
+  height: 3px;
 }
 
 .hamburger_icon {
   position: relative;
-  -webkit-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-          transform: translateY(10px);
+  -webkit-transform: translateY(8px);
+      -ms-transform: translateY(8px);
+          transform: translateY(8px);
   background: white;
   -webkit-transition: all 0ms 300ms;
   -o-transition: all 0ms 300ms;
@@ -202,7 +223,7 @@ a {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 10px;
+  bottom: 8px;
   background: white;
   -webkit-transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -215,7 +236,7 @@ a {
   content: "";
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 8px;
   background: white;
   -webkit-transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);

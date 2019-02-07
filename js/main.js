@@ -20,8 +20,8 @@ $('.hamburger_holder').on('click', function() {
 		cssEase: 'ease',
  // vertical: true,
   //rtl: true,
- // prevArrow: $('#arrow_slick_left'),
- // nextArrow: $('#arrow_slick_right')
+  prevArrow: $('#left_arrow'),
+  nextArrow: $('#right_arrow')
 });
 
 	//Parallax
