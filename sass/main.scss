@@ -52,68 +52,105 @@ a {
   overflow: hidden;
   display: grid;
   grid-template-columns: 40% 60%;
+  background: url(../img/full-bloom.png);
+
+  
   .left_hand {
     position: relative;
-    background: #fff;
     
+    
+    border-right: 5px solid #ffcc00;
+    margin-right: 5px;
     
    
-    .left_hand_nav {
+    .logo {
       color: #ffcc00;
       margin: 20px 0 0 0;
-      font-size: 2rem;
-      ul {
-        list-style: none;
+      display: inline-block;
+      p {
         margin: 0 0 0 25px;
-        li {
-          float: left;
-          margin: 0 0 0 10px;
-          cursor: pointer;
-        }
+        font-size: 5rem;
+      }
+    }
+    .vertical_line {
+      position: absolute;
+      top: 250px;
+      left: 50px;
+      transform: rotate(180deg);
+      p {
+        writing-mode: vertical-rl;
+        margin: 10px 0;
+        font-size: 2rem;
       }
     }
     .box {
-      width: 90%;
+      width: 100%;
       height: 80%;
       background: url(../img/chalkboard.jpg);
       position: absolute;
-      margin: 50px 0 0 150px;
+      margin: 10px 0 0 150px;
       z-index: 2;
+      
+
       .box_item {
         width: 100%;
-        margin: 150px 0 0 100px;
-        position: absolute;
+        height: 100%;
+        border-left: 5px solid #ffcc00;
+        margin-left: 5px;
         h1 {
           color: #fff;
+          padding: 100px 50px;
+          span {
+            color: #ffcc00;
+          }
         }
       }
     }
   }
-  .logo {
+  .right_hand {
     position: relative;
-
-    h6 {
+    
+    ul {
       position: absolute;
-      color: #ffcc00;
-      top: 35px;
-      left: 35px;
+      list-style: none;
+      top: 20px;
+      left: 30px;
       z-index: 99;
+      li {
+        font-size: 1.6rem;
+        float: left;
+        margin-right: 15px;
+        a {
+          color: #fff;
+        }
+      }
     }
     .main_slider {
       width: 100%;
       height: 100vh;
-      figure {     
+      overflow: hidden;
+      figure {
+        display: block;     
         img {
           width: 100%;
           height: 100vh;
           vertical-align: bottom;
         }
+        figcaption {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          
+          background: rgba(0,0,0,.02);
+        }
       }
     }
     .slider_arrows {
       position: absolute;
-      bottom: 30px;
-      right: 30px;
+      bottom: 15px;
+      right: 15px;
       .arrow_left {
         border: 1px solid #fff;
         float: left;
@@ -133,22 +170,6 @@ a {
 }
 
 
-.slick-active {
-  img {
-    animation-name: scaleUp;
-    animation-duration: 4s;  
-    animation-timing-function: ease-out;
-    
-  }
-}
-@keyframes scaleUp {
-  0% {
-    transform: scale(1.30);
-  }
-  100% {
-    transform: scale(1)
-  }
-}
 
 $bar-width: 35px;
 $bar-height: 3px;
@@ -222,10 +243,10 @@ $bar-spacing: 8px;
   z-index: 90;
   top: 0;
   left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
+  
+  background-color: rgba(0,0,0, 1);
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.6s;
   .overlay_content {
     position: relative;
     top: 25%;

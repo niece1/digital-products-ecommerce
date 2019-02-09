@@ -9,17 +9,17 @@ $('.hamburger_holder').on('click', function() {
 	$(".main_slider").slick({
 		infinite:true,
 		draggable: false,
-		fade: true,
+	//	fade: true,
 		dots: false,
-		arrows: false,
+		arrows: true,
 		autoplay: true,
-		speed: 1300,
+		speed: 900,
 		autoplaySpeed: 4000,
 		pauseOnDotsHover:true,
 		pauseOnHover:false,
 		cssEase: 'ease',
  // vertical: true,
-  //rtl: true,
+  rtl: true,
   prevArrow: $('#left_arrow'),
   nextArrow: $('#right_arrow')
 });

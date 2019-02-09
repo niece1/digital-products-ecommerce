@@ -67,79 +67,122 @@ a {
   overflow: hidden;
   display: grid;
   grid-template-columns: 40% 60%;
+  background: url(../img/full-bloom.png);
 }
 
 .main .left_hand {
   position: relative;
-  background: #fff;
+  border-right: 5px solid #ffcc00;
+  margin-right: 5px;
 }
 
-.main .left_hand .left_hand_nav {
+.main .left_hand .logo {
   color: #ffcc00;
   margin: 20px 0 0 0;
+  display: inline-block;
+}
+
+.main .left_hand .logo p {
+  margin: 0 0 0 25px;
+  font-size: 5rem;
+}
+
+.main .left_hand .vertical_line {
+  position: absolute;
+  top: 250px;
+  left: 50px;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.main .left_hand .vertical_line p {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  margin: 10px 0;
   font-size: 2rem;
 }
 
-.main .left_hand .left_hand_nav ul {
-  list-style: none;
-  margin: 0 0 0 25px;
-}
-
-.main .left_hand .left_hand_nav ul li {
-  float: left;
-  margin: 0 0 0 10px;
-  cursor: pointer;
-}
-
 .main .left_hand .box {
-  width: 90%;
+  width: 100%;
   height: 80%;
   background: url(../img/chalkboard.jpg);
   position: absolute;
-  margin: 50px 0 0 150px;
+  margin: 10px 0 0 150px;
   z-index: 2;
 }
 
 .main .left_hand .box .box_item {
   width: 100%;
-  margin: 150px 0 0 100px;
-  position: absolute;
+  height: 100%;
+  border-left: 5px solid #ffcc00;
+  margin-left: 5px;
 }
 
 .main .left_hand .box .box_item h1 {
   color: #fff;
+  padding: 100px 50px;
 }
 
-.main .logo {
+.main .left_hand .box .box_item h1 span {
+  color: #ffcc00;
+}
+
+.main .right_hand {
   position: relative;
 }
 
-.main .logo h6 {
+.main .right_hand ul {
   position: absolute;
-  color: #ffcc00;
-  top: 35px;
-  left: 35px;
+  list-style: none;
+  top: 20px;
+  left: 30px;
   z-index: 99;
 }
 
-.main .logo .main_slider {
-  width: 100%;
-  height: 100vh;
+.main .right_hand ul li {
+  font-size: 1.6rem;
+  float: left;
+  margin-right: 15px;
 }
 
-.main .logo .main_slider figure img {
+.main .right_hand ul li a {
+  color: #fff;
+}
+
+.main .right_hand .main_slider {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main .right_hand .main_slider figure {
+  display: block;
+}
+
+.main .right_hand .main_slider figure img {
   width: 100%;
   height: 100vh;
   vertical-align: bottom;
 }
 
-.main .logo .slider_arrows {
+.main .right_hand .main_slider figure figcaption {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.02);
 }
 
-.main .logo .slider_arrows .arrow_left {
+.main .right_hand .slider_arrows {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.main .right_hand .slider_arrows .arrow_left {
   border: 1px solid #fff;
   float: left;
   margin-right: 2px;
@@ -147,43 +190,12 @@ a {
   cursor: pointer;
 }
 
-.main .logo .slider_arrows .arrow_right {
+.main .right_hand .slider_arrows .arrow_right {
   border: 1px solid #fff;
   float: right;
   margin-left: 2px;
   padding: 0 15px;
   cursor: pointer;
-}
-
-.slick-active img {
-  -webkit-animation-name: scaleUp;
-          animation-name: scaleUp;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
-@-webkit-keyframes scaleUp {
-  0% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@keyframes scaleUp {
-  0% {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
 }
 
 .hamburger_holder {
@@ -277,11 +289,10 @@ a {
   top: 0;
   left: 0;
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.9);
   overflow-x: hidden;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.6s;
+  -o-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .overlay_menu .overlay_content {
