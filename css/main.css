@@ -233,15 +233,14 @@ a {
 
 a.button {
   border: 2px solid #000;
-  padding: 20px 30px;
-  font-size: 40px;
+  padding: 10px 20px;
+  font-size: 2.5rem;
   position: relative;
   outline: none;
+  display: inline-block;
   color: white;
   background-color: transparent;
-  margin: 40px;
-  font-family: 'Merriweather', serif;
-  white-space: nowrap;
+  margin: 2px;
 }
 
 a.button--swap span {
@@ -250,8 +249,8 @@ a.button--swap span {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 20px 30px;
-  font-size: 40px;
+  padding: 10px 20px;
+  font-size: 2.5rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   opacity: 0;
@@ -419,63 +418,6 @@ a.button--swap:hover span {
   }
 }
 
-[data-wipe] {
-  display: inline-block;
-  padding: 12px 18px;
-  text-decoration: none;
-  position: relative;
-  border: 2px solid #445561;
-  border-radius: 3px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-align: left;
-  color: #445561;
-  overflow: hidden;
-}
-
-[data-wipe]:before, [data-wipe]:after {
-  content: attr(data-wipe);
-  padding-top: inherit;
-  padding-bottom: inherit;
-  white-space: nowrap;
-  position: absolute;
-  top: 0;
-  overflow: hidden;
-  color: #F1F1F2;
-  background: #445561;
-}
-
-[data-wipe]:before {
-  left: 0;
-  text-indent: 18px;
-  width: 0;
-}
-
-[data-wipe]:after {
-  padding-left: inherit;
-  padding-right: inherit;
-  left: 100%;
-  text-indent: calc(-100% - 36px);
-  -webkit-transition: 0.2s ease-in-out;
-  -o-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-}
-
-[data-wipe]:hover:before {
-  width: 100%;
-  -webkit-transition: width 0.2s ease-in-out;
-  -o-transition: width 0.2s ease-in-out;
-  transition: width 0.2s ease-in-out;
-}
-
-[data-wipe]:hover:after {
-  left: 0;
-  text-indent: 0;
-  -webkit-transition: 0s 0.2s ease-in-out;
-  -o-transition: 0s 0.2s ease-in-out;
-  transition: 0s 0.2s ease-in-out;
-}
-
 /*About Section Styles*/
 .about {
   width: 100%;
@@ -484,7 +426,7 @@ a.button--swap:hover span {
 
 .about .about_wrapper {
   width: 75%;
-  margin: 90px auto;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: 65% 35%;
   grid-column-gap: 50px;
@@ -593,6 +535,7 @@ a.button--swap:hover span {
 .portfolio .portfolio_container .portfolio_item a img {
   width: 100%;
   height: auto;
+  vertical-align: middle;
 }
 
 .portfolio .portfolio_container .portfolio_item a div {
@@ -638,28 +581,48 @@ a.button--swap:hover span {
   width: 100%;
 }
 
+.blog h5 {
+  text-align: center;
+  margin: 20px 0 0 0;
+  text-transform: uppercase;
+}
+
+.blog h1 {
+  text-align: center;
+  margin: 5px 0 30px 0;
+}
+
 .blog .blog_wrapper {
   width: 75%;
-  margin: 90px auto;
+  margin: auto;
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-column-gap: 50px;
+  grid-column-gap: 30px;
 }
 
 .blog .blog_wrapper .blog_item {
   overflow: hidden;
   width: 100%;
   height: auto;
-  display: inline-block;
+  display: block;
 }
 
 .blog .blog_wrapper .blog_item .thumbnail {
   position: relative;
+  display: block;
+  overflow: hidden;
 }
 
 .blog .blog_wrapper .blog_item .thumbnail a img {
   width: 100%;
+  display: block;
   height: 100%;
+  vertical-align: middle;
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  -o-transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
 }
 
 .blog .blog_wrapper .blog_item .thumbnail a .thumbnail_overlay {
@@ -668,6 +631,73 @@ a.button--swap:hover span {
   right: 0;
   width: 100%;
   height: 100%;
+}
+
+.blog .blog_wrapper .blog_item .thumbnail a:hover img {
+  -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.blog .blog_wrapper .blog_item .thumbnail a:hover .thumbnail_overlay {
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9;
+  -webkit-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content {
+  display: grid;
+  grid-template-columns: 20% 70%;
+  grid-column-gap: 30px;
+  margin: 30px 0 0 0;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blog_date a {
+  display: inline-block;
+  border: 3px solid #000;
+  padding: 20px 14px;
+  text-align: center;
+  margin: 0 0 0 15px;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blog_date a span#date {
+  font-weight: 600;
+  font-size: 3rem;
+  color: #000;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blog_date a span {
+  color: #4e4e4e;
+  font-size: 1.2rem;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blog_date a:hover span#date {
+  color: #ffcc00;
+  -webkit-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blog_date a:hover span {
+  color: #ffcc00;
+  -webkit-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a {
+  padding: 0 0 10px 0;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a:hover {
+  color: #ffcc00;
+  -webkit-transition: all .5s linear;
+  -o-transition: all .5s linear;
+  transition: all .5s linear;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info p {
+  padding: 5px 0;
+  color: #4e4e4e;
 }
