@@ -32,6 +32,7 @@ h6 {
 
 p {
   font-size: 1.6rem;
+  font-family: 'PT Sans', sans-serif;
 }
 
 html {
@@ -84,13 +85,13 @@ a {
 .main .left_hand ul.login li {
   float: left;
   margin-right: 15px;
-  font-size: 1.6rem;
-  letter-spacing: 3px;
-  font-family: 'Muli', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .main .left_hand ul.login li a {
-  color: #ffcc00;
+  color: #363636;
 }
 
 .main .left_hand .vertical_line {
@@ -108,7 +109,6 @@ a {
 
 .main .left_hand .vertical_line ul li {
   font-size: 2rem;
-  font-family: 'Questrial', sans-serif;
 }
 
 .main .left_hand .vertical_line ul li a {
@@ -154,7 +154,6 @@ a {
   float: left;
   font-size: 2.3rem;
   margin-left: 10px;
-  font-family: 'Questrial', sans-serif;
 }
 
 .main .right_hand {
@@ -172,7 +171,6 @@ a {
 
 .main .right_hand .logo p {
   font-size: 2rem;
-  font-family: 'Questrial', sans-serif;
 }
 
 .main .right_hand .main_slider {
@@ -594,7 +592,7 @@ a.button--swap:hover span {
 
 .blog .blog_wrapper {
   width: 75%;
-  margin: auto;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-column-gap: 30px;
@@ -700,4 +698,18 @@ a.button--swap:hover span {
 .blog .blog_wrapper .blog_item .blogpost_content .blogpost_info p {
   padding: 5px 0;
   color: #4e4e4e;
+}
+
+/*Footer styles*/
+footer {
+  width: 100%;
+  height: auto;
+}
+
+footer .footer_wrapper {
+  width: 75%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 50px;
 }
