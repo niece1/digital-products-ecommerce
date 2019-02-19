@@ -136,11 +136,61 @@ a {
 
 .main .left_hand .box .box_item h1 {
   color: #fff;
-  padding: 100px 50px;
+  padding: 100px 0 50px 50px;
 }
 
 .main .left_hand .box .box_item h1 span {
   color: #ffcc00;
+}
+
+.main .left_hand .box .box_item a.button {
+  border: 2px solid #ffcc00;
+  padding: 10px 20px;
+  font-size: 2.5rem;
+  position: relative;
+  outline: none;
+  display: inline-block;
+  color: #fff;
+  background-color: transparent;
+  margin-left: 50px;
+}
+
+.main .left_hand .box .box_item a.button-swap span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-size: 2.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  opacity: 0;
+  color: #000;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.main .left_hand .box .box_item a.button-swap::before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: #ffcc00;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.main .left_hand .box .box_item a.button-swap:hover:before {
+  width: 100%;
+}
+
+.main .left_hand .box .box_item a.button-swap:hover span {
+  opacity: 1;
 }
 
 .main .left_hand ul#choose_language {
@@ -161,16 +211,18 @@ a {
 }
 
 .main .right_hand .logo {
-  color: #fff;
+  color: #000;
   position: absolute;
   top: 20px;
   left: 20px;
   z-index: 9;
   display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .main .right_hand .logo p {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .main .right_hand .main_slider {
@@ -212,6 +264,20 @@ a {
   cursor: pointer;
 }
 
+.main .right_hand .slider_arrows .arrow_left:hover {
+  border: 1px solid #ffcc00;
+  -webkit-transition: border .5s ease;
+  -o-transition: border .5s ease;
+  transition: border .5s ease;
+}
+
+.main .right_hand .slider_arrows .arrow_left:not(:hover) {
+  border: 1px solid #fff;
+  -webkit-transition: border .5s ease;
+  -o-transition: border .5s ease;
+  transition: border .5s ease;
+}
+
 .main .right_hand .slider_arrows .arrow_right {
   border: 1px solid #fff;
   float: right;
@@ -220,63 +286,29 @@ a {
   cursor: pointer;
 }
 
+.main .right_hand .slider_arrows .arrow_right:hover {
+  border: 1px solid #ffcc00;
+  -webkit-transition: border .5s ease;
+  -o-transition: border .5s ease;
+  transition: border .5s ease;
+}
+
+.main .right_hand .slider_arrows .arrow_right:not(:hover) {
+  border: 1px solid #fff;
+  -webkit-transition: border .5s ease;
+  -o-transition: border .5s ease;
+  transition: border .5s ease;
+}
+
 .menu {
   position: absolute;
   top: 20px;
   right: 20px;
   margin: auto;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   cursor: pointer;
-}
-
-a.button {
-  border: 2px solid #000;
-  padding: 10px 20px;
-  font-size: 2.5rem;
-  position: relative;
-  outline: none;
-  display: inline-block;
-  color: white;
-  background-color: transparent;
-  margin: 2px;
-}
-
-a.button--swap span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 10px 20px;
-  font-size: 2.5rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  opacity: 0;
-  color: black;
-  -webkit-transition: 0.35s ease;
-  -o-transition: 0.35s ease;
-  transition: 0.35s ease;
-}
-
-a.button--swap::before {
-  content: "";
-  left: 0;
-  top: 0;
-  position: absolute;
-  width: 0;
-  height: 100%;
-  background-color: white;
-  -webkit-transition: 0.5s ease;
-  -o-transition: 0.5s ease;
-  transition: 0.5s ease;
-}
-
-a.button--swap:hover:before {
-  width: 100%;
-}
-
-a.button--swap:hover span {
-  opacity: 1;
+  text-transform: uppercase;
 }
 
 /* Overlay style */
@@ -616,11 +648,11 @@ a.button--swap:hover span {
   display: block;
   height: 100%;
   vertical-align: middle;
-  -webkit-transition: -webkit-transform 500ms ease-in-out;
-  transition: -webkit-transform 500ms ease-in-out;
-  -o-transition: transform 500ms ease-in-out;
-  transition: transform 500ms ease-in-out;
-  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  -webkit-transition: -webkit-transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 
 .blog .blog_wrapper .blog_item .thumbnail a .thumbnail_overlay {
@@ -639,9 +671,16 @@ a.button--swap:hover span {
 
 .blog .blog_wrapper .blog_item .thumbnail a:hover .thumbnail_overlay {
   background-color: rgba(0, 0, 0, 0.4);
-  -webkit-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
+  -webkit-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+}
+
+.blog .blog_wrapper .blog_item .thumbnail a:not(:hover) .thumbnail_overlay {
+  background-color: transparent;
+  -webkit-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
 }
 
 .blog .blog_wrapper .blog_item .blogpost_content {
@@ -654,7 +693,7 @@ a.button--swap:hover span {
 .blog .blog_wrapper .blog_item .blogpost_content .blog_date a {
   display: inline-block;
   border: 3px solid #000;
-  padding: 20px 14px;
+  padding: 20px 16px;
   text-align: center;
   margin: 0 0 0 15px;
 }
@@ -684,15 +723,36 @@ a.button--swap:hover span {
   transition: all .5s ease-out;
 }
 
+.blog .blog_wrapper .blog_item .blogpost_content .blog_date a:not(:hover) span#date {
+  color: #000;
+  -webkit-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blog_date a:not(:hover) span {
+  color: #000;
+  -webkit-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
 .blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a {
   padding: 0 0 10px 0;
 }
 
 .blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a:hover {
   color: #ffcc00;
-  -webkit-transition: all .5s linear;
-  -o-transition: all .5s linear;
-  transition: all .5s linear;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a:not(:hover) {
+  color: #000;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .blog .blog_wrapper .blog_item .blogpost_content .blogpost_info p {
@@ -700,16 +760,69 @@ a.button--swap:hover span {
   color: #4e4e4e;
 }
 
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a.button_blog {
+  border: 2px solid #ffcc00;
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  position: relative;
+  outline: none;
+  display: inline-block;
+  color: #000;
+  background-color: transparent;
+  margin-top: 20px;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a.button_blog-swap_blog span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  opacity: 0;
+  color: #fff;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a.button_blog-swap_blog::before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: #ffcc00;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a.button_blog-swap_blog:hover:before {
+  width: 100%;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a.button_blog-swap_blog:hover span {
+  opacity: 1;
+}
+
 /*Footer styles*/
 footer {
   width: 100%;
-  height: auto;
+  min-height: 250px;
+  color: #fff;
+  background-color: #1e1e1e;
+  padding-top: 50px;
 }
 
 footer .footer_wrapper {
   width: 75%;
   margin: auto;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 40% 20% 20% 20%;
   grid-column-gap: 50px;
 }
