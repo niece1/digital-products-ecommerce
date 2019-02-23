@@ -1,8 +1,9 @@
 $(document).ready(function () {
 
-	$(".main_slider").slick({
-		infinite:true,
-		draggable: false,
+ //Slick slider
+ $(".main_slider").slick({
+ 	infinite:true,
+ 	draggable: false,
 	//	fade: true,
 	dots: false,
 	arrows: true,
@@ -17,6 +18,7 @@ $(document).ready(function () {
  nextArrow: $('#right_arrow')
 });
 
+	//Sticky sidebar
 	block_pos = $('.about_box_item').offset().top;
 	wrap_pos = $('.about_wrapper').offset().top; 
 	block_height = $('.about_box_item').outerHeight(); 
@@ -89,6 +91,7 @@ $('.filter_button_group').on( 'click', 'li', function() {
 
 });
 
+//Menu overlay animation
 (function() {
 	var triggerBttn = document.getElementById( 'trigger-overlay' ),
 	overlay = document.querySelector( 'div.overlay' ),
@@ -129,3 +132,10 @@ $('.filter_button_group').on( 'click', 'li', function() {
 	triggerBttn.addEventListener( 'click', toggleOverlay );
 	closeBttn.addEventListener( 'click', toggleOverlay );
 })();
+
+//Input underline animation
+const wrapper = document.querySelector(".input-wrapper"),
+textInput = document.querySelector("input[type='email']");        
+textInput.addEventListener("keyup", event => {
+	wrapper.setAttribute("data-text", event.target.value);
+});
