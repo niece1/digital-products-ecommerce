@@ -372,7 +372,7 @@ a {
   font-size: 54px;
   font-weight: 300;
   display: block;
-  color: #ffcc00;
+  color: #9c9c9c;
   -webkit-transition: color 0.2s;
   -o-transition: color 0.2s;
   transition: color 0.2s;
@@ -380,7 +380,7 @@ a {
 
 .overlay ul li a:hover,
 .overlay ul li a:focus {
-  color: #4dc7ed;
+  color: #ffcc00;
   -webkit-transition: all .5s ease-out;
   -o-transition: all .5s ease-out;
   transition: all .5s ease-out;
@@ -463,6 +463,12 @@ a {
   min-height: 400px;
 }
 
+@media only screen and (max-width: 900px) {
+  .about .about_wrapper {
+    grid-template-columns: 100%;
+  }
+}
+
 .about .about_wrapper .about_content {
   min-height: 400px;
 }
@@ -475,6 +481,56 @@ a {
   line-height: 2.5rem;
 }
 
+.about .about_wrapper .about_content a {
+  font-size: 1.6rem;
+  margin: 10px 0 0 -7px;
+  display: inline-block;
+}
+
+.about .about_wrapper .about_content a span {
+  position: relative;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.about .about_wrapper .about_content a span:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f105";
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.about .about_wrapper .about_content a:hover span {
+  padding-left: 7px;
+  color: #ffcc00;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.about .about_wrapper .about_content a:hover span:before {
+  opacity: 1;
+  padding-right: 7px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  color: #ffcc00;
+}
+
+.about .about_wrapper .about_content .qualities {
+  display: block;
+  text-align: center;
+}
+
+.about .about_wrapper .about_content .qualities .qualities_block .quality_holder {
+  display: inline-block;
+  padding: 50px;
+}
+
 .about .about_wrapper .about_box {
   height: 150px;
 }
@@ -483,6 +539,8 @@ a {
   background-color: #000;
   padding: 50px 100px 50px 50px;
   display: inline-block;
+  border-left: 5px solid #ffcc00;
+  overflow: hidden;
 }
 
 .about .about_wrapper .about_box .about_box_item h4 {
@@ -635,6 +693,12 @@ a {
   grid-column-gap: 30px;
 }
 
+@media only screen and (max-width: 900px) {
+  .blog .blog_wrapper {
+    grid-template-columns: auto;
+  }
+}
+
 .blog .blog_wrapper .blog_item {
   overflow: hidden;
   width: 100%;
@@ -700,7 +764,7 @@ a {
   border: 3px solid #000;
   padding: 20px 16px;
   text-align: center;
-  margin: 0 0 0 15px;
+  margin: 0 10px 0 15px;
 }
 
 .blog .blog_wrapper .blog_item .blogpost_content .blog_date a span#date {
@@ -999,7 +1063,7 @@ footer .footer_wrapper .footer_newsletter .input-wrapper button.button_footer {
   cursor: pointer;
   color: #fff;
   background-color: transparent;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 footer .footer_wrapper .footer_newsletter .input-wrapper button.button_footer-swap_footer span {
