@@ -18,36 +18,8 @@ $(document).ready(function () {
  nextArrow: $('#right_arrow')
 });
 
-	//Sticky sidebar
-	block_pos = $('.about_box_item').offset().top;
-	wrap_pos = $('.about_wrapper').offset().top; 
-	block_height = $('.about_box_item').outerHeight(); 
-	wrap_height = $('.about_wrapper').outerHeight(); 
-	block_width = $('.about_box_item').outerWidth(); 
-	pos_absolute = wrap_pos + wrap_height - block_height;
-	$(window).scroll(function () {
-		if ($(window).scrollTop() > pos_absolute) {
-
-			$('.about_box_item').css({
-				'position': 'absolute',
-				'top': wrap_height - block_height,
-				'width': block_width
-			});
-		}
-		else if ($(window).scrollTop() > block_pos) { 
-
-			$('.about_box_item').css({
-				'position': 'fixed',
-				'top': '0px',
-				'width': block_width
-			}); 
-		} else {
-
-			$('.about_box_item').css({
-				'position': 'static'
-			}); 
-		}
-	});
+// Sticky-kit plugin
+$(".about_box").stick_in_parent();
 
 //Isotope
 var $grid = $('.portfolio_container').isotope({

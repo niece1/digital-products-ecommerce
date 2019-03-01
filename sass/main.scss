@@ -54,11 +54,17 @@ a {
   display: grid;
   grid-template-columns: 40% 60%;
   background: url(../img/full-bloom.png);
+  @media only screen and (max-width: 1060px) {
+    grid-template-columns: 100%;
+    height: auto;
+  }
   .left_hand {
     position: relative;
     border-right: 5px solid #ffcc00;
     margin-right: 5px;
-    
+    @media only screen and (max-width: 1060px) {
+      height: 100vh;
+    }
     ul.login { 
       list-style: none;
       margin: 20px 0 0 20px;
@@ -96,6 +102,11 @@ a {
       position: absolute;
       margin: 80px 0 0 150px;
       z-index: 2;
+      @media only screen and (max-width: 1060px) {
+        position: relative;
+        width: 75%;
+        margin: 80px auto;
+      }
       .box_item {
         width: 100%;
         height: 100%;
@@ -168,6 +179,9 @@ a {
   }
   .right_hand {
     position: relative;
+    @media only screen and (max-width: 900px) {
+      height: 100vh;
+    }
     .logo {
       color: #000;
       position: absolute;
@@ -180,6 +194,22 @@ a {
       p {
         
         font-size: 1.2rem;
+      }
+    }
+    .hamburger_holder {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin: auto;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-transform: uppercase;
+      z-index: 99;
+      p {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
       }
     }
 
@@ -243,16 +273,7 @@ a {
   }
 }
 
-.menu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  margin: auto;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  cursor: pointer;
-  text-transform: uppercase;
-}
+
 
 
 
@@ -380,16 +401,14 @@ a {
   .about_wrapper {
     width: 85%;
     margin: 80px auto;
-    display: grid;
-    grid-template-columns: 50% 30%;
-    grid-column-gap: 300px;
     min-height: 400px;
-    @media only screen and (max-width: 900px) {
-      grid-template-columns: 100%;
-    }
     .about_content {
-      min-height: 400px;
-                 
+      
+      width: 60%;
+      display: inline-block;
+      @media only screen and (max-width: 1000px) {
+        width: 100%;
+      }          
       h3 {
         margin: 0 0 20px 0;
       }
@@ -433,18 +452,18 @@ a {
           }
         }
       }
-    }
-    
-    .about_box {
-      height: 150px;
-      
-      
+    }    
+    .about_box {  
+      float: right;
+      @media only screen and (max-width: 1000px) {
+        float: none;
+      }
       .about_box_item {
         background-color: #000;
         padding: 50px 100px 50px 50px;
-        display: inline-block;
-        border-left: 5px solid #ffcc00;
+        display: inline-block; 
         overflow: hidden;
+        margin: 0 0 0 30px;
         h4 {
           color: #ffcc00;
         }
@@ -496,15 +515,14 @@ a {
     }
   }
   .portfolio_container {
-    width: 85%;
+    width: 100%;
     margin: auto;
     .portfolio_item {
-      width: 24%;
+      width: 25%;
       float: left;
-      margin: 5px 0.5%;
       overflow: hidden;
       position: relative;
-      @media only screen and (max-width: 900px) {
+      @media only screen and (max-width: 1015px) {
         width: 50%;
       }
       @media only screen and (max-width: 600px) {
@@ -514,7 +532,7 @@ a {
         img {
           width: 100%;
           height: auto;
-          vertical-align: middle;
+          vertical-align: middle;  
         }
         div {
           position: absolute;
@@ -523,27 +541,26 @@ a {
           width: 100%;
           height: 100%;
           z-index: 1;
-          font-size: 2rem;
+          font-size: 2rem;       
           &:before {
             content: "";
             width: 1%;
             height: 100%;
             display: inline-block;
-            vertical-align: middle;
+            vertical-align: middle;            
           }
           &:after {
             content: "";
             border: 2px solid #fff;
             position: absolute;
-            top: 12px;
-            bottom: 12px;
-            left: 12px;
-            right: 12px;
+            top: 15px;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
           }
           .caption {
             display: inline-block;
-            vertical-align: middle;
-            
+            vertical-align: middle;           
             width: 100%;
             height: 100%;
             margin: 0 auto;
@@ -574,7 +591,7 @@ a {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 30px;
-     @media only screen and (max-width: 900px) {
+     @media only screen and (max-width: 1015px) {
       grid-template-columns: auto;
      }
     .blog_item {
@@ -582,6 +599,9 @@ a {
       width: 100%;
       height: auto;
       display: block;
+      @media only screen and (max-width: 1015px) {
+        margin-bottom: 30px;
+      }
       .thumbnail {
         position: relative;
         display: block;
@@ -629,7 +649,7 @@ a {
             border: 3px solid #000;
             padding: 20px 16px;
             text-align: center;
-            margin: 0 10px 0 15px;
+            margin: 0 0 0 15px;
             span#date {
               font-weight: 600;
               font-size: 3rem;
@@ -638,6 +658,9 @@ a {
             span {
               color: #4e4e4e;
               font-size: 1.2rem;
+              @media only screen and (max-width: 1015px) {
+                padding: 0 3px;
+              }
             }
             &:hover {
               span#date {
@@ -662,6 +685,7 @@ a {
           }
         }
         .blogpost_info {
+          margin-left: 10px;
           a {
             padding: 0 0 10px 0;
             &:hover {
@@ -742,6 +766,12 @@ footer {
     display: grid;
     grid-template-columns: 30% 15% 15% 40%;
     grid-column-gap: 50px;
+    @media only screen and (max-width: 1267px) {
+      grid-template-columns: 50% 50%;
+    }
+    @media only screen and (max-width: 700px) {
+      grid-template-columns: 100%;
+    }
     .footer_about {
       p {
         margin: 0 0 10px 0;
@@ -789,6 +819,35 @@ footer {
           margin-right: 10px;
           display: inline-block;
         }
+      }
+      a {
+        color: #fff;
+        margin: 10px 0 0 0;
+        display: inline-block;
+        font-size: 1.4rem;
+        margin-left: -7px;
+        span {
+          position: relative;
+          transition: 0.5s;
+          &:before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f105";
+            opacity: 0;
+            transition: 0.5s;
+          }
+        }
+      }
+      a:hover span {
+        padding-left: 7px;
+        color: #ffcc00;
+        transition: all 0.5s ease-in-out;
+      }
+      a:hover span:before {
+        opacity: 1;
+        padding-right: 7px;
+        transition: all 0.5s ease-in-out;
+        color: #ffcc00
       }
     }
     .footer_links {

@@ -71,10 +71,23 @@ a {
   background: url(../img/full-bloom.png);
 }
 
+@media only screen and (max-width: 1060px) {
+  .main {
+    grid-template-columns: 100%;
+    height: auto;
+  }
+}
+
 .main .left_hand {
   position: relative;
   border-right: 5px solid #ffcc00;
   margin-right: 5px;
+}
+
+@media only screen and (max-width: 1060px) {
+  .main .left_hand {
+    height: 100vh;
+  }
 }
 
 .main .left_hand ul.login {
@@ -125,6 +138,14 @@ a {
   position: absolute;
   margin: 80px 0 0 150px;
   z-index: 2;
+}
+
+@media only screen and (max-width: 1060px) {
+  .main .left_hand .box {
+    position: relative;
+    width: 75%;
+    margin: 80px auto;
+  }
 }
 
 .main .left_hand .box .box_item {
@@ -210,6 +231,12 @@ a {
   position: relative;
 }
 
+@media only screen and (max-width: 900px) {
+  .main .right_hand {
+    height: 100vh;
+  }
+}
+
 .main .right_hand .logo {
   color: #000;
   position: absolute;
@@ -223,6 +250,24 @@ a {
 
 .main .right_hand .logo p {
   font-size: 1.2rem;
+}
+
+.main .right_hand .hamburger_holder {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin: auto;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  z-index: 99;
+}
+
+.main .right_hand .hamburger_holder p {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
 }
 
 .main .right_hand .main_slider {
@@ -298,17 +343,6 @@ a {
   -webkit-transition: border .5s ease;
   -o-transition: border .5s ease;
   transition: border .5s ease;
-}
-
-.menu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  margin: auto;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  cursor: pointer;
-  text-transform: uppercase;
 }
 
 /* Overlay style */
@@ -457,20 +491,18 @@ a {
 .about .about_wrapper {
   width: 85%;
   margin: 80px auto;
-  display: grid;
-  grid-template-columns: 50% 30%;
-  grid-column-gap: 300px;
   min-height: 400px;
-}
-
-@media only screen and (max-width: 900px) {
-  .about .about_wrapper {
-    grid-template-columns: 100%;
-  }
 }
 
 .about .about_wrapper .about_content {
-  min-height: 400px;
+  width: 60%;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 1000px) {
+  .about .about_wrapper .about_content {
+    width: 100%;
+  }
 }
 
 .about .about_wrapper .about_content h3 {
@@ -532,15 +564,21 @@ a {
 }
 
 .about .about_wrapper .about_box {
-  height: 150px;
+  float: right;
+}
+
+@media only screen and (max-width: 1000px) {
+  .about .about_wrapper .about_box {
+    float: none;
+  }
 }
 
 .about .about_wrapper .about_box .about_box_item {
   background-color: #000;
   padding: 50px 100px 50px 50px;
   display: inline-block;
-  border-left: 5px solid #ffcc00;
   overflow: hidden;
+  margin: 0 0 0 30px;
 }
 
 .about .about_wrapper .about_box .about_box_item h4 {
@@ -601,19 +639,18 @@ a {
 }
 
 .portfolio .portfolio_container {
-  width: 85%;
+  width: 100%;
   margin: auto;
 }
 
 .portfolio .portfolio_container .portfolio_item {
-  width: 24%;
+  width: 25%;
   float: left;
-  margin: 5px 0.5%;
   overflow: hidden;
   position: relative;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1015px) {
   .portfolio .portfolio_container .portfolio_item {
     width: 50%;
   }
@@ -653,10 +690,10 @@ a {
   content: "";
   border: 2px solid #fff;
   position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
 }
 
 .portfolio .portfolio_container .portfolio_item a div .caption {
@@ -693,7 +730,7 @@ a {
   grid-column-gap: 30px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1015px) {
   .blog .blog_wrapper {
     grid-template-columns: auto;
   }
@@ -704,6 +741,12 @@ a {
   width: 100%;
   height: auto;
   display: block;
+}
+
+@media only screen and (max-width: 1015px) {
+  .blog .blog_wrapper .blog_item {
+    margin-bottom: 30px;
+  }
 }
 
 .blog .blog_wrapper .blog_item .thumbnail {
@@ -764,7 +807,7 @@ a {
   border: 3px solid #000;
   padding: 20px 16px;
   text-align: center;
-  margin: 0 10px 0 15px;
+  margin: 0 0 0 15px;
 }
 
 .blog .blog_wrapper .blog_item .blogpost_content .blog_date a span#date {
@@ -776,6 +819,12 @@ a {
 .blog .blog_wrapper .blog_item .blogpost_content .blog_date a span {
   color: #4e4e4e;
   font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1015px) {
+  .blog .blog_wrapper .blog_item .blogpost_content .blog_date a span {
+    padding: 0 3px;
+  }
 }
 
 .blog .blog_wrapper .blog_item .blogpost_content .blog_date a:hover span#date {
@@ -804,6 +853,10 @@ a {
   -webkit-transition: all .5s ease-out;
   -o-transition: all .5s ease-out;
   transition: all .5s ease-out;
+}
+
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info {
+  margin-left: 10px;
 }
 
 .blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a {
@@ -897,6 +950,18 @@ footer .footer_wrapper {
   grid-column-gap: 50px;
 }
 
+@media only screen and (max-width: 1267px) {
+  footer .footer_wrapper {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  footer .footer_wrapper {
+    grid-template-columns: 100%;
+  }
+}
+
 footer .footer_wrapper .footer_about p {
   margin: 0 0 10px 0;
   color: #9c9c9c;
@@ -957,6 +1022,48 @@ footer .footer_wrapper .footer_contact p i {
   min-width: 15px;
   margin-right: 10px;
   display: inline-block;
+}
+
+footer .footer_wrapper .footer_contact a {
+  color: #fff;
+  margin: 10px 0 0 0;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-left: -7px;
+}
+
+footer .footer_wrapper .footer_contact a span {
+  position: relative;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+footer .footer_wrapper .footer_contact a span:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f105";
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+footer .footer_wrapper .footer_contact a:hover span {
+  padding-left: 7px;
+  color: #ffcc00;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+footer .footer_wrapper .footer_contact a:hover span:before {
+  opacity: 1;
+  padding-right: 7px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  color: #ffcc00;
 }
 
 footer .footer_wrapper .footer_links h6 {
