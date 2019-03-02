@@ -61,6 +61,10 @@ a {
   color: #000;
 }
 
+ul {
+  list-style: none;
+}
+
 /* Main Section Styles*/
 .main {
   width: 100%;
@@ -75,6 +79,7 @@ a {
   .main {
     grid-template-columns: 100%;
     height: auto;
+    width: 100%;
   }
 }
 
@@ -87,15 +92,16 @@ a {
 @media only screen and (max-width: 1060px) {
   .main .left_hand {
     height: 100vh;
+    width: 100%;
+    grid-area: 2/1/3/2;
   }
 }
 
-.main .left_hand ul.login {
-  list-style: none;
+.main .left_hand ul#login {
   margin: 20px 0 0 20px;
 }
 
-.main .left_hand ul.login li {
+.main .left_hand ul#login li {
   float: left;
   margin-right: 15px;
   font-size: 1.2rem;
@@ -103,32 +109,39 @@ a {
   text-transform: uppercase;
 }
 
-.main .left_hand ul.login li a {
+.main .left_hand ul#login li a {
   color: #363636;
 }
 
-.main .left_hand .vertical_line {
+.main .left_hand ul#choose_language {
+  margin: 20px 20px 0 0;
+}
+
+.main .left_hand ul#choose_language li {
+  float: right;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.main .left_hand ul#choose_language li a {
+  color: #363636;
+}
+
+.main .left_hand p#vertical_line {
   position: absolute;
   top: 250px;
-  left: 0;
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.main .left_hand .vertical_line ul {
-  list-style: none;
-}
-
-.main .left_hand .vertical_line ul li {
-  font-size: 2rem;
-}
-
-.main .left_hand .vertical_line ul li a {
+  left: 20px;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  margin: 10px 0;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
 .main .left_hand .box {
@@ -136,7 +149,7 @@ a {
   height: 75%;
   background: url(../img/curls.png);
   position: absolute;
-  margin: 80px 0 0 150px;
+  margin: 75px 0 0 150px;
   z-index: 2;
 }
 
@@ -144,7 +157,7 @@ a {
   .main .left_hand .box {
     position: relative;
     width: 75%;
-    margin: 80px auto;
+    margin: 100px auto;
   }
 }
 
@@ -214,42 +227,52 @@ a {
   opacity: 1;
 }
 
-.main .left_hand ul#choose_language {
+.main .left_hand ul#follow {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  list-style: none;
 }
 
-.main .left_hand ul#choose_language li {
+.main .left_hand ul#follow li {
   float: left;
-  font-size: 2.3rem;
+  font-size: 1.2rem;
   margin-left: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .main .right_hand {
   position: relative;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1060px) {
   .main .right_hand {
-    height: 100vh;
+    height: auto;
+    grid-area: 1/1/2/2;
   }
 }
 
-.main .right_hand .logo {
-  color: #000;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.main .right_hand .menu {
+  width: 100%;
   z-index: 9;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  position: absolute;
 }
 
-.main .right_hand .logo p {
+.main .right_hand .menu a {
+  text-transform: uppercase;
+  letter-spacing: 2px;
   font-size: 1.2rem;
+  display: inline-block;
+  margin: 20px;
+}
+
+.main .right_hand .menu p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  float: right;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .main .right_hand .hamburger_holder {
@@ -385,7 +408,6 @@ a {
 }
 
 .overlay ul {
-  list-style: none;
   padding: 0;
   margin: 0 auto;
   display: inline-block;
@@ -514,9 +536,11 @@ a {
 }
 
 .about .about_wrapper .about_content a {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   margin: 10px 0 0 -7px;
   display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .about .about_wrapper .about_content a span {
@@ -583,10 +607,6 @@ a {
 
 .about .about_wrapper .about_box .about_box_item h4 {
   color: #ffcc00;
-}
-
-.about .about_wrapper .about_box .about_box_item ul.what_we_do {
-  list-style: none;
 }
 
 .about .about_wrapper .about_box .about_box_item ul.what_we_do li {
@@ -711,7 +731,7 @@ a {
   width: 100%;
 }
 
-.blog h5 {
+.blog h6 {
   text-align: center;
   margin: 20px 0 0 0;
   text-transform: uppercase;
@@ -863,6 +883,10 @@ a {
   padding: 0 0 10px 0;
 }
 
+.blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a h5 {
+  font-size: 1.8rem;
+}
+
 .blog .blog_wrapper .blog_item .blogpost_content .blogpost_info a:hover {
   color: #ffcc00;
   -webkit-transition: all .5s ease;
@@ -969,8 +993,10 @@ footer .footer_wrapper .footer_about p {
 
 footer .footer_wrapper .footer_about a {
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-left: -7px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 footer .footer_wrapper .footer_about a span {
@@ -1028,8 +1054,10 @@ footer .footer_wrapper .footer_contact a {
   color: #fff;
   margin: 10px 0 0 0;
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-left: -7px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 footer .footer_wrapper .footer_contact a span {
@@ -1069,10 +1097,6 @@ footer .footer_wrapper .footer_contact a:hover span:before {
 footer .footer_wrapper .footer_links h6 {
   margin: 0 0 10px 7px;
   font-weight: normal;
-}
-
-footer .footer_wrapper .footer_links ul {
-  list-style: none;
 }
 
 footer .footer_wrapper .footer_links ul li {

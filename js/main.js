@@ -4,11 +4,11 @@ $(document).ready(function () {
  $(".main_slider").slick({
  	infinite:true,
  	draggable: false,
-	//	fade: true,
+	fade: true,
 	dots: false,
 	arrows: true,
 	autoplay: true,
-	speed: 900,
+	speed: 1200,
 	autoplaySpeed: 4000,
 	pauseOnDotsHover:true,
 	pauseOnHover:false,

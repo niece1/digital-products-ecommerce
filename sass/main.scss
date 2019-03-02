@@ -44,6 +44,9 @@ a {
 	text-decoration: none;
   color: #000;
 }
+ul {
+  list-style: none;
+}
 
 /* Main Section Styles*/
 
@@ -57,6 +60,7 @@ a {
   @media only screen and (max-width: 1060px) {
     grid-template-columns: 100%;
     height: auto;
+    width: 100%;
   }
   .left_hand {
     position: relative;
@@ -64,9 +68,10 @@ a {
     margin-right: 5px;
     @media only screen and (max-width: 1060px) {
       height: 100vh;
+      width: 100%;
+      grid-area: 2/1/3/2;
     }
-    ul.login { 
-      list-style: none;
+    ul#login { 
       margin: 20px 0 0 20px;
       li {        
         float: left;
@@ -79,33 +84,40 @@ a {
         }
       }
     }
-    .vertical_line {
-      position: absolute;
-      top: 250px;
-      left: 0;
-      transform: rotate(180deg);
-      ul {
-        list-style: none;
-        li {
-          font-size: 2rem;
-          a {
-            writing-mode: vertical-rl;
-            margin: 10px 0;
-          }
+    ul#choose_language {
+      margin: 20px 20px 0 0;
+      li {
+        float: right;
+        margin-left: 10px;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        a {
+          color: #363636;
         }
       }
+    }
+    p#vertical_line {
+      position: absolute;
+      top: 250px;
+      left: 20px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 1.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
     .box {
       width: 100%;
       height: 75%;
       background: url(../img/curls.png);
       position: absolute;
-      margin: 80px 0 0 150px;
+      margin: 75px 0 0 150px;
       z-index: 2;
       @media only screen and (max-width: 1060px) {
         position: relative;
         width: 75%;
-        margin: 80px auto;
+        margin: 100px auto;
       }
       .box_item {
         width: 100%;
@@ -165,35 +177,43 @@ a {
         }
       }
     }
-    ul#choose_language {
+    ul#follow {
       position: absolute;
       bottom: 20px;
       right: 20px;
-      list-style: none;
       li {
         float: left;
-        font-size: 2.3rem;
+        font-size: 1.2rem;
         margin-left: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
       }
     }
   }
   .right_hand {
     position: relative;
-    @media only screen and (max-width: 900px) {
-      height: 100vh;
+    @media only screen and (max-width: 1060px) {
+      height: auto;
+      grid-area: 1/1/2/2;
     }
-    .logo {
-      color: #000;
-      position: absolute;
-      top: 20px;
-      left: 20px;
+    .menu {
+      width: 100%;
       z-index: 9;
-      display: inline-block;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      p {
-        
+      position: absolute;
+      a {
+        text-transform: uppercase;
+        letter-spacing: 2px;
         font-size: 1.2rem;
+        display: inline-block;
+        margin: 20px;
+      }
+      p {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.2rem;
+        float: right;
+        margin: 20px;
+        cursor: pointer;
       }
     }
     .hamburger_holder {
@@ -315,7 +335,6 @@ a {
 }
 
 .overlay ul {
-  list-style: none;
   padding: 0;
   margin: 0 auto;
   display: inline-block;
@@ -416,9 +435,11 @@ a {
         line-height: 2.5rem;
       }
       a {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         margin: 10px 0 0 -7px;
         display: inline-block;
+        letter-spacing: 1px;
+        text-transform: uppercase;
         span {
           position: relative;
           transition: 0.5s;
@@ -468,7 +489,6 @@ a {
           color: #ffcc00;
         }
         ul.what_we_do {
-          list-style: none;
           li {
             font-size: 1.6rem;
             line-height: 2.6rem;
@@ -576,7 +596,7 @@ a {
 /*Blog Section Styles*/
 .blog {
   width: 100%;
-  h5 {
+  h6 {
     text-align: center;
     margin: 20px 0 0 0;
     text-transform: uppercase;
@@ -688,6 +708,9 @@ a {
           margin-left: 10px;
           a {
             padding: 0 0 10px 0;
+            h5 {
+              font-size: 1.8rem;
+            }
             &:hover {
               color: #ffcc00;
               transition: all .5s ease;
@@ -779,8 +802,10 @@ footer {
       }
       a {
         color: #fff;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         margin-left: -7px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
         span {
           position: relative;
           transition: 0.5s;
@@ -824,8 +849,10 @@ footer {
         color: #fff;
         margin: 10px 0 0 0;
         display: inline-block;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         margin-left: -7px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
         span {
           position: relative;
           transition: 0.5s;
@@ -856,7 +883,6 @@ footer {
         font-weight: normal;
       }
       ul {
-        list-style: none;
         li {
           padding: 2px 0;
           a {
