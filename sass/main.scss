@@ -104,8 +104,9 @@ ul {
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       font-size: 1.8rem;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       text-transform: uppercase;
+      color: #ffcc00;
     }
     .box {
       width: 100%;
@@ -232,7 +233,6 @@ ul {
         letter-spacing: 2px;
       }
     }
-
     .main_slider {
       width: 100%;
       height: 100vh;
@@ -292,10 +292,6 @@ ul {
     }
   }
 }
-
-
-
-
 
 /* Overlay style */
 .overlay {
@@ -470,6 +466,9 @@ ul {
           .quality_holder {
             display: inline-block;
             padding: 50px;
+            h5 {
+              text-transform: uppercase;
+            }
           }
         }
       }
@@ -487,6 +486,7 @@ ul {
         margin: 0 0 0 30px;
         h4 {
           color: #ffcc00;
+          margin-bottom: 15px;
         }
         ul.what_we_do {
           li {
@@ -601,7 +601,7 @@ ul {
     margin: 20px 0 0 0;
     text-transform: uppercase;
   }
-  h1 {
+  h3 {
     text-align: center;
     margin: 5px 0 30px 0;
   }
