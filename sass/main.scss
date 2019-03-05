@@ -783,7 +783,7 @@ footer {
   background-color: #000;
   padding-top: 50px;
   overflow: hidden;
-  .footer_wrapper {
+  .footer_wrapper_upper {
     width: 85%;
     margin: auto;
     display: grid;
@@ -914,6 +914,39 @@ footer {
         color: #ffcc00;
       }
     }
+    .footer_twitter {
+      h6 {
+        font-weight: normal;
+      }
+      p {
+        margin: 15px 0 5px 0;
+        color: #9c9c9c;
+      }     
+    }
+  }
+  .footer_wrapper_down {
+    width: 85%;
+    margin: 30px auto;
+    padding: 30px 0;
+    border-top: 1px solid #9c9c9c;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    .footer_copyright {
+      h6 {
+        font-weight: normal;
+        margin: 0 0 10px 0;
+        i {
+          color: #ffcc00;
+          margin: 0 10px 0 0;
+        }
+        a {
+          color: #fff;
+        }
+      }
+      p {
+        color: #9c9c9c;
+      }
+    }
     .footer_newsletter {
       h6 {
         font-weight: normal;
@@ -1009,7 +1042,7 @@ footer {
           transition: all .5s ease-in-out;
         }
       }
-    }
+    } 
   }
 }
 
