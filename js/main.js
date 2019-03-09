@@ -37,8 +37,8 @@ $('.filter_button_group').on( 'click', 'li', function() {
 
 	//Parallax
 	var $window = $(window);
-	if($('div[data-type="background"]').length){
-		$('div[data-type="background"]').each(function(){
+	if($('section[data-type="background"]').length){
+		$('section[data-type="background"]').each(function(){
 
 			var $obj = $(this);
 			var offset = $obj.offset().top;
@@ -85,7 +85,7 @@ $(window).scroll(function(){
 $('.count_number').each(function () {
   var $this = $(this);
   jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
-    duration: 3000,
+    durationsection000,
     easing: 'swing',
     step: function () {
       $this.text(Math.ceil(this.Counter));
