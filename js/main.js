@@ -4,15 +4,15 @@ $(document).ready(function () {
  $(".main_slider").slick({
  	infinite:true,
  	draggable: false,
-	fade: true,
-	dots: false,
-	arrows: true,
-	autoplay: true,
-	speed: 1200,
-	autoplaySpeed: 4000,
-	pauseOnDotsHover:true,
-	pauseOnHover:false,
-	cssEase: 'ease',
+ 	fade: true,
+ 	dots: false,
+ 	arrows: true,
+ 	autoplay: true,
+ 	speed: 1200,
+ 	autoplaySpeed: 4000,
+ 	pauseOnDotsHover:true,
+ 	pauseOnHover:false,
+ 	cssEase: 'ease',
  // vertical: true,
  prevArrow: $('#left_arrow'),
  nextArrow: $('#right_arrow')
@@ -36,66 +36,14 @@ $('.filter_button_group').on( 'click', 'li', function() {
 });
 
 	//Parallax
-	var $window = $(window);
-	if($('section[data-type="background"]').length){
-		$('section[data-type="background"]').each(function(){
-
-			var $obj = $(this);
-			var offset = $obj.offset().top;
-
-			$(window).scroll(function()
-			{
-				offset = $obj.offset().top;
-
-				if ($window.scrollTop() > (offset - window.innerHeight))
-				{
-					var yPos = -(($window.scrollTop() - offset) / 2 );
-					var coords = '50% ' + ( yPos ) + 'px';
-					$obj.css({ backgroundPosition:  coords });
-				}
-			});
-			$(window).resize(function()
-			{
-				offset = $obj.offset().top;
-			});
-		});
-	}
-
-	// Counter 
-function visible(partial) {
-    var $t = partial,
-        $w = jQuery(window),
-        viewTop = $w.scrollTop(),
-        viewBottom = viewTop + $w.height(),
-        _top = $t.offset().top,
-        _bottom = _top + $t.height(),
-        compareTop = partial === true ? _bottom : _top,
-        compareBottom = partial === true ? _top : _bottom;
-
-    return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
-}
-
-$(window).scroll(function(){
-
-  if(visible($('.count_number')))
-    {
-      if($('.count_number').hasClass('counter-loaded')) return;
-      $('.count_number').addClass('counter-loaded');
-      
-$('.count_number').each(function () {
-  var $this = $(this);
-  jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
-    durationsection000,
-    easing: 'swing',
-    step: function () {
-      $this.text(Math.ceil(this.Counter));
-    }
-  });
+$(window).scroll(function() {
+	var st = $(this).scrollTop();
+	$('.parallax_text').css({
+		'transform' : 'translate(0%, ' + st + '%'
+	});
 });
-    }
-})
-
 });
+
 
 //Menu overlay animation
 (function() {

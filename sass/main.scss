@@ -1069,7 +1069,11 @@ footer {
 
 .header {
   width: 100%;
-  height: 40vh;
+  height: 50vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
   .menu_page {
     position: absolute;
     width: 100%;
@@ -1113,12 +1117,13 @@ footer {
       }
     }
   }
-  h3 {
-    color: #fff;
-    text-align: center;
-    padding-top: 120px;
-    letter-spacing: 3px;
-  }
+.parallax_text {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color: #ffcc00;
+  top: 200px;
+}
 }
 
 /*Contact section styles*/
@@ -1130,31 +1135,179 @@ footer {
     width: 85%;
     margin: 80px auto;
     display: grid;
-    grid-template-columns: 60% 30%;
-    grid-column-gap: 50px;
+    grid-template-columns: 50% 30%;
+    grid-column-gap: 100px;
+    h4 {
+      margin: 0 0 10px 0;
+    }
     .contact_form {
-      .name_email {
+      p {
+        margin: 0 0 30px 0;
+      }
+      #name {
         width: 100%;
+        margin: 0 0 30px 0;
         input {
-          width: 48.5%;
-          float: left;
+          width: 100%;
+          
+          padding: 15px 20px;
+          border: none;
+          border-bottom: 2px solid #000;
+          font-size: 1.6rem;
+          display: inline-block;
           &::placeholder {
             font-size: 1.6rem;
             color: #000;
           }
-        }
-        input[type="text"] {
-          margin-right: 3%;
+          &:focus {
+            outline: none;
+          }
+          &:focus ~ label, &:valid ~ label {
+            top: -1.4rem;
+            font-size: 1.2rem;
+            color: #ffcc00;
+          }
+          &:focus ~ .bar:before {
+            width: 100%;
+          }
         }
       }
-      .message {
+      #email {
         width: 100%;
         input {
           width: 100%;
-          &::placeholder {
+          
+          padding: 15px 20px;
+          border: none;
+          border-bottom: 2px solid #000;
+          display: inline-block;
+          font-size: 1.6rem;
+          &:placeholder {
             font-size: 1.6rem;
             color: #000;
           }
+          &:focus {
+            outline: none;
+          }
+          &:focus ~ label, &:valid ~ label {
+            top: -1.4rem;
+            font-size: 1.2rem;
+            color: #ffcc00;
+          }
+          &:focus ~ .bar:before {
+            width: 100%;
+          }
+        }
+      }
+      #message {
+        width: 100%;
+        margin: 30px 0 0 0;
+        input {
+          width: 100%;
+          padding: 15px 20px 150px 20px;
+          font-size: 1.6rem;         
+          display: inline-block;         
+          border: none;
+          border-bottom: 2px solid #000;
+          &:focus {
+            outline: none;
+          }
+          &:focus ~ label, &:valid ~ label {
+            top: -1.4rem;
+            font-size: 1.2rem;
+            color: #ffcc00;
+          }
+          &:focus ~ .bar:before {
+            width: 100%;
+          }
+          &:placeholder {
+            font-size: 1.6rem;
+            color: #000;
+          }
+        }
+      }
+      .group {
+        position: relative;
+      }
+      label {
+        color: #000;
+        font-size: 16px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 350ms ease all;
+      }
+      .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+        &:before {
+          content: '';
+          height: 3px;
+          width: 0;
+          bottom: 0px;
+          position: absolute;
+          background: #ffcc00;
+          transition: 350ms ease all;
+          left: 0%;
+        }
+      }
+      button.button_contact_form {
+        border: 2px solid #ffcc00;
+        padding: 12px 45px;
+        margin-top: 15px;
+        font-size: 1.6rem;
+        position: relative;
+        outline: none;
+        display: inline-block;
+        cursor: pointer;
+        color: #000;
+        background-color: transparent;
+        &-swap_contact_form {
+          span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 12px 45px;
+            font-size: 1.6rem;
+            box-sizing: border-box;
+            opacity: 0;
+            color: #fff;
+            transition: .5s ease;
+          }
+          &:before {
+            content: "";
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background-color: #ffcc00;
+            transition: 0.5s ease;
+          }
+          &:hover {
+            &:before {
+              width: 100%;
+            }
+            span {
+              opacity: 1;
+            }
+          }
+        }        
+      }
+    }
+    .direct_contact {
+      h6 {
+        margin: 10px 0;
+      }
+      p {
+        i {
+          color: #ffcc00;
+          margin-right: 8px;
         }
       }
     }

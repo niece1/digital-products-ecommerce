@@ -1345,7 +1345,11 @@ footer .footer_wrapper_down .footer_newsletter a:hover {
 /* Contact page. Header section*/
 .header {
   width: 100%;
-  height: 40vh;
+  height: 50vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .header .menu_page {
@@ -1400,11 +1404,12 @@ footer .footer_wrapper_down .footer_newsletter a:hover {
   background: #fff;
 }
 
-.header h3 {
-  color: #fff;
+.header .parallax_text {
+  position: absolute;
   text-align: center;
-  padding-top: 120px;
-  letter-spacing: 3px;
+  width: 100%;
+  color: #ffcc00;
+  top: 200px;
 }
 
 /*Contact section styles*/
@@ -1417,67 +1422,223 @@ footer .footer_wrapper_down .footer_newsletter a:hover {
   width: 85%;
   margin: 80px auto;
   display: grid;
-  grid-template-columns: 60% 30%;
-  grid-column-gap: 50px;
+  grid-template-columns: 50% 30%;
+  grid-column-gap: 100px;
 }
 
-.contact .contact_wrapper .contact_form .name_email {
+.contact .contact_wrapper h4 {
+  margin: 0 0 10px 0;
+}
+
+.contact .contact_wrapper .contact_form p {
+  margin: 0 0 30px 0;
+}
+
+.contact .contact_wrapper .contact_form #name {
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+
+.contact .contact_wrapper .contact_form #name input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-bottom: 2px solid #000;
+  font-size: 1.6rem;
+  display: inline-block;
+}
+
+.contact .contact_wrapper .contact_form #name input::-webkit-input-placeholder {
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.contact .contact_wrapper .contact_form #name input:-ms-input-placeholder {
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.contact .contact_wrapper .contact_form #name input::-ms-input-placeholder {
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.contact .contact_wrapper .contact_form #name input::placeholder {
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.contact .contact_wrapper .contact_form #name input:focus {
+  outline: none;
+}
+
+.contact .contact_wrapper .contact_form #name input:focus ~ label, .contact .contact_wrapper .contact_form #name input:valid ~ label {
+  top: -1.4rem;
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+.contact .contact_wrapper .contact_form #name input:focus ~ .bar:before {
   width: 100%;
 }
 
-.contact .contact_wrapper .contact_form .name_email input {
-  width: 48.5%;
-  float: left;
-}
-
-.contact .contact_wrapper .contact_form .name_email input::-webkit-input-placeholder {
-  font-size: 1.6rem;
-  color: #000;
-}
-
-.contact .contact_wrapper .contact_form .name_email input:-ms-input-placeholder {
-  font-size: 1.6rem;
-  color: #000;
-}
-
-.contact .contact_wrapper .contact_form .name_email input::-ms-input-placeholder {
-  font-size: 1.6rem;
-  color: #000;
-}
-
-.contact .contact_wrapper .contact_form .name_email input::placeholder {
-  font-size: 1.6rem;
-  color: #000;
-}
-
-.contact .contact_wrapper .contact_form .name_email input[type="text"] {
-  margin-right: 3%;
-}
-
-.contact .contact_wrapper .contact_form .message {
+.contact .contact_wrapper .contact_form #email {
   width: 100%;
 }
 
-.contact .contact_wrapper .contact_form .message input {
+.contact .contact_wrapper .contact_form #email input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-bottom: 2px solid #000;
+  display: inline-block;
+  font-size: 1.6rem;
+}
+
+.contact .contact_wrapper .contact_form #email input:placeholder {
+  font-size: 1.6rem;
+  color: #000;
+}
+
+.contact .contact_wrapper .contact_form #email input:focus {
+  outline: none;
+}
+
+.contact .contact_wrapper .contact_form #email input:focus ~ label, .contact .contact_wrapper .contact_form #email input:valid ~ label {
+  top: -1.4rem;
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+.contact .contact_wrapper .contact_form #email input:focus ~ .bar:before {
   width: 100%;
 }
 
-.contact .contact_wrapper .contact_form .message input::-webkit-input-placeholder {
+.contact .contact_wrapper .contact_form #message {
+  width: 100%;
+  margin: 30px 0 0 0;
+}
+
+.contact .contact_wrapper .contact_form #message input {
+  width: 100%;
+  padding: 15px 20px 150px 20px;
+  font-size: 1.6rem;
+  display: inline-block;
+  border: none;
+  border-bottom: 2px solid #000;
+}
+
+.contact .contact_wrapper .contact_form #message input:focus {
+  outline: none;
+}
+
+.contact .contact_wrapper .contact_form #message input:focus ~ label, .contact .contact_wrapper .contact_form #message input:valid ~ label {
+  top: -1.4rem;
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+.contact .contact_wrapper .contact_form #message input:focus ~ .bar:before {
+  width: 100%;
+}
+
+.contact .contact_wrapper .contact_form #message input:placeholder {
   font-size: 1.6rem;
   color: #000;
 }
 
-.contact .contact_wrapper .contact_form .message input:-ms-input-placeholder {
-  font-size: 1.6rem;
-  color: #000;
+.contact .contact_wrapper .contact_form .group {
+  position: relative;
 }
 
-.contact .contact_wrapper .contact_form .message input::-ms-input-placeholder {
-  font-size: 1.6rem;
+.contact .contact_wrapper .contact_form label {
   color: #000;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  -webkit-transition: 350ms ease all;
+  -o-transition: 350ms ease all;
+  transition: 350ms ease all;
 }
 
-.contact .contact_wrapper .contact_form .message input::placeholder {
+.contact .contact_wrapper .contact_form .bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.contact .contact_wrapper .contact_form .bar:before {
+  content: '';
+  height: 3px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #ffcc00;
+  -webkit-transition: 350ms ease all;
+  -o-transition: 350ms ease all;
+  transition: 350ms ease all;
+  left: 0%;
+}
+
+.contact .contact_wrapper .contact_form button.button_contact_form {
+  border: 2px solid #ffcc00;
+  padding: 12px 45px;
+  margin-top: 15px;
   font-size: 1.6rem;
+  position: relative;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
   color: #000;
+  background-color: transparent;
+}
+
+.contact .contact_wrapper .contact_form button.button_contact_form-swap_contact_form span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 12px 45px;
+  font-size: 1.6rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  opacity: 0;
+  color: #fff;
+  -webkit-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.contact .contact_wrapper .contact_form button.button_contact_form-swap_contact_form:before {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: #ffcc00;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.contact .contact_wrapper .contact_form button.button_contact_form-swap_contact_form:hover:before {
+  width: 100%;
+}
+
+.contact .contact_wrapper .contact_form button.button_contact_form-swap_contact_form:hover span {
+  opacity: 1;
+}
+
+.contact .contact_wrapper .direct_contact h6 {
+  margin: 10px 0;
+}
+
+.contact .contact_wrapper .direct_contact p i {
+  color: #ffcc00;
+  margin-right: 8px;
 }
