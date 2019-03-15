@@ -1117,16 +1117,36 @@ footer {
       }
     }
   }
-.parallax_text {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  color: #ffcc00;
-  top: 200px;
-}
+  .parallax_text {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: #ffcc00;
+    top: 200px;
+  }
 }
 
-/*Contact section styles*/
+/*About page styles*/
+
+.about_me {
+  width: 100%;
+  height: auto;
+  .about_me_wrapper {
+    width: 85%;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 30% 50%;
+    grid-column-gap: 100px;
+    .about_image {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+/*Contact page styles*/
 
 .contact {
   width: 100%;
@@ -1309,6 +1329,84 @@ footer {
           color: #ffcc00;
           margin-right: 8px;
         }
+      }
+    }
+  }
+}
+
+/*Skills section styles*/
+
+.skills {
+  width: 100%;
+
+  background-color: #ffcc00;
+  .skills_wrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+    min-height: 200px;
+    justify-content: space-around;
+    align-content: center;
+    @media only screen and (max-width: 800px) {
+      grid-template-columns: auto auto;
+    }
+    .skills_item {
+      color: #fff;
+      padding: 15px 0;
+      h2 {
+        text-decoration: overline;
+      }
+      p {
+        font-size: 1.4rem;
+        text-align: left;
+        color: #fff;
+      }
+
+    }
+  }
+}
+
+
+
+.accordeon {
+  width: 100%;
+  height: auto;
+  .accordeon_wrapper {
+    width: 85%;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-column-gap: 100px;
+    .accordeon_side {
+      .accordeon_title {
+        background-color: #ffcc00;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        border: 3px solid #000;
+        margin: 0 0 5px 0;
+        &:after {
+          content: '\f067';
+          font-family: "Font Awesome 5 Free";
+          float: right;
+          font-size: 1.2em;
+          color: #fff;
+          
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+        }
+      }
+      .accordeon_content {
+        display: none;
+        padding: 10px;
+      }
+      .accordeon_title.is-opened:after {
+        content: '\f068';
+        font-family: "Font Awesome 5 Free";
       }
     }
   }

@@ -21,6 +21,25 @@ $(document).ready(function () {
 // Sticky-kit plugin
 $(".about_box").stick_in_parent();
 
+//Accordeon
+
+$(function($){
+	var contents = $('.accordeon_content');
+  var titles = $('.accordeon_title');
+  titles.on('click',function(){
+    var title = $(this);
+    contents.filter(':visible').slideUp(function(){
+    	$(this).prev('.accordeon_title').removeClass('is-opened');
+    });  
+    
+    var content = title.next('.accordeon_content'); 
+    
+    if (!content.is(':visible')) {
+      content.slideDown(function(){title.addClass('is-opened')});
+    } 
+  });
+})(jQuery);
+
 //Isotope
 var $grid = $('.portfolio_container').isotope({
 	itemSelector: '.portfolio_item',
