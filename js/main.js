@@ -23,7 +23,6 @@ $(".about_box").stick_in_parent();
 
 //Accordeon
 
-$(function($){
 	var contents = $('.accordeon_content');
   var titles = $('.accordeon_title');
   titles.on('click',function(){
@@ -38,21 +37,6 @@ $(function($){
       content.slideDown(function(){title.addClass('is-opened')});
     } 
   });
-})(jQuery);
-
-//Isotope
-var $grid = $('.portfolio_container').isotope({
-	itemSelector: '.portfolio_item',
-	stagger: 30
-});
-
-$('.filter_button_group').on( 'click', 'li', function() {
-	var filterValue = $(this).attr('data-filter');
-	$grid.isotope({ filter: filterValue });
-
-	$('.filter_button_group li').removeClass('active');
-	$(this).addClass('active');
-});
 
 	//Parallax
 $(window).scroll(function() {
@@ -62,7 +46,6 @@ $(window).scroll(function() {
 	});
 });
 });
-
 
 //Menu overlay animation
 (function() {

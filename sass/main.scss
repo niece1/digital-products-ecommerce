@@ -60,7 +60,7 @@ $bar-spacing: 8px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 60% 40%;
-  background: url(../img/curls.png);
+  background: url(../img/dark_exa.png);
   @media only screen and (max-width: 1060px) {
     grid-template-columns: 100%;
     height: auto;
@@ -102,9 +102,14 @@ $bar-spacing: 8px;
       }
     }
     h1 {
-      font-size: 8rem;
+      font-size: 5rem;
       color: #fff;
-      padding: 200px 100px 0 150px;
+      padding: 180px 100px 0 150px;
+    }
+    p.main_description {
+      color: #fff;
+      padding: 20px 100px 0 150px;
+      font-size: 2rem;
     }
     a.button {
       border: 2px solid #ffcc00;
@@ -507,37 +512,29 @@ $bar-spacing: 8px;
   overflow-y: hidden;
   h3 {
     text-align: center;
-    margin: 50px 0 0 0;
+    margin: 5px 0 30px 0;
+    font-weight: normal;
   }
-  .filters {
+  h6 {
     text-align: center;
-    margin: 20px auto 50px auto;
-    ul {
-      padding: 20px 0;
-      li {
-        display: inline-block;
-        font-size: 1.8rem;
-        margin: 0 10px;
-        padding-bottom: 3px;
-        cursor: pointer;
-        color: #000;
-      }
-      li.active {
-        border-bottom: 2px solid #ffcc00;
-      }
-    }
+    text-transform: uppercase;
+    margin: 20px 0 0 0;
   }
   .portfolio_container {
-    width: 100%;
+    width: 99.5%;
     margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: auto auto;
+    }
+    @media only screen and (max-width: 750px) {
+      grid-template-columns: auto;
+    }
     .portfolio_item {
-      width: 33.333%;
-      float: left;
+      margin: 5px;
       overflow: hidden;
       position: relative;
-      @media only screen and (max-width: 600px) {
-        width: 100%;
-      }
       a {
         img {
           width: 100%;
@@ -594,6 +591,7 @@ $bar-spacing: 8px;
   h3 {
     text-align: center;
     margin: 5px 0 30px 0;
+    font-weight: normal;
   }
   .blog_wrapper {
     width: 85%;
@@ -713,6 +711,11 @@ $bar-spacing: 8px;
           p {
             padding: 5px 0;
             color: #4e4e4e;
+          }
+          i {
+            color: #000;
+            font-size: 0.8rem;
+            margin: 0 7px;
           }
           a.button_blog {
             border: 2px solid #ffcc00;
@@ -1135,12 +1138,109 @@ footer {
     width: 85%;
     margin: 80px auto;
     display: grid;
-    grid-template-columns: 30% 50%;
+    grid-template-columns: 30% 60%;
     grid-column-gap: 100px;
+    @media only screen and (max-width: 1000px) {
+      grid-template-columns: auto auto;
+      grid-column-gap: 50px;
+    }
     .about_image {
       img {
         width: 100%;
         height: auto;
+      }
+    }
+    .about_info {
+      h3 {
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+}
+
+/*Skills section styles*/
+
+.skills {
+  width: 100%;
+  background-image: url(../img/IMG_5425.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 210px;
+  .skills_overlay {
+    position: absolute;
+    width: 100%;
+    min-height: 210px;
+    background: rgba(0, 0, 0, 0.5);
+    .skills_wrapper {
+      width: 85%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      text-align: center;
+      min-height: 200px;
+      justify-content: space-around;
+      align-content: center;
+      @media only screen and (max-width: 800px) {
+        grid-template-columns: auto auto;
+      }
+      .skills_item {
+        color: #fff;
+        padding: 15px 0;
+        h2 {
+          text-decoration: overline;
+        }
+        p {
+          font-size: 1.4rem;
+          text-align: left;
+          color: #fff;
+        }
+
+      }
+    }
+  }
+}
+
+/*Accordeon section styles*/
+
+.accordeon {
+  width: 100%;
+  height: auto;
+  .accordeon_wrapper {
+    width: 85%;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-column-gap: 100px;
+    .accordeon_side {
+      .accordeon_title {
+        background-color: #ffcc00;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        border: 3px solid #000;
+        margin: 0 0 5px 0;
+        &:after {
+          content: '\f067';
+          font-family: "Font Awesome 5 Free";
+          float: right;
+          font-size: 1.2em;
+          color: #fff;
+          
+          width: 20px;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+        }
+      }
+      .accordeon_content {
+        display: none;
+        padding: 10px;
+      }
+      .accordeon_title.is-opened:after {
+        content: '\f068';
+        font-family: "Font Awesome 5 Free";
       }
     }
   }
@@ -1334,83 +1434,7 @@ footer {
   }
 }
 
-/*Skills section styles*/
 
-.skills {
-  width: 100%;
-
-  background-color: #ffcc00;
-  .skills_wrapper {
-    width: 85%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    text-align: center;
-    min-height: 200px;
-    justify-content: space-around;
-    align-content: center;
-    @media only screen and (max-width: 800px) {
-      grid-template-columns: auto auto;
-    }
-    .skills_item {
-      color: #fff;
-      padding: 15px 0;
-      h2 {
-        text-decoration: overline;
-      }
-      p {
-        font-size: 1.4rem;
-        text-align: left;
-        color: #fff;
-      }
-
-    }
-  }
-}
-
-
-
-.accordeon {
-  width: 100%;
-  height: auto;
-  .accordeon_wrapper {
-    width: 85%;
-    margin: 80px auto;
-    display: grid;
-    grid-template-columns: 45% 45%;
-    grid-column-gap: 100px;
-    .accordeon_side {
-      .accordeon_title {
-        background-color: #ffcc00;
-        color: #fff;
-        padding: 10px;
-        cursor: pointer;
-        border: 3px solid #000;
-        margin: 0 0 5px 0;
-        &:after {
-          content: '\f067';
-          font-family: "Font Awesome 5 Free";
-          float: right;
-          font-size: 1.2em;
-          color: #fff;
-          
-          width: 20px;
-          height: 20px;
-          line-height: 20px;
-          text-align: center;
-        }
-      }
-      .accordeon_content {
-        display: none;
-        padding: 10px;
-      }
-      .accordeon_title.is-opened:after {
-        content: '\f068';
-        font-family: "Font Awesome 5 Free";
-      }
-    }
-  }
-}
 
 
 
