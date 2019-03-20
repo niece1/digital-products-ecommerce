@@ -111,11 +111,39 @@ $bar-spacing: 8px;
       font-size: 5rem;
       color: #ffcc00;
       padding: 180px 100px 0 150px;
+      @media only screen and (max-width: 1280px) {
+        padding: 130px 100px 0 150px;
+      }
+      @media only screen and (max-width: 650px) {
+        padding: 100px 100px 0 150px;
+      }
+      @media only screen and (max-width: 550px) {
+        padding: 70px 100px 0 150px;
+        font-size: 4rem;
+      }
+      @media only screen and (max-width: 480px) {
+        font-size: 3rem;
+        padding: 130px 70px 0 90px;
+      }
+      @media only screen and (max-width: 420px) {
+        padding: 100px 70px 0 90px;
+      }
+      @media only screen and (max-width: 360px) {
+        font-size: 2rem;
+        padding: 70px 70px 0 90px;
+      }
     }
     p.main_description {
       color: #fff;
-      padding: 20px 100px 0 150px;
+      padding: 30px 100px 10px 150px;
       font-size: 2rem;
+      @media only screen and (max-width: 1200px) {
+        padding: 10px 100px 0 150px;
+      }
+      @media only screen and (max-width: 480px) {
+        font-size: 1.8rem;
+        padding: 30px 70px 10px 90px;
+      }
     }
     a.button {
       border: 2px solid #ffcc00;
@@ -127,6 +155,12 @@ $bar-spacing: 8px;
       color: #fff;
       background-color: transparent;
       margin: 30px 0 0 150px;
+      @media only screen and (max-width: 1200px) {
+        margin: 20px 0 0 150px;
+      }
+      @media only screen and (max-width: 510px) {
+        display: none;
+      }
       &-swap {
         span {
           position: absolute;
@@ -249,6 +283,9 @@ $bar-spacing: 8px;
           vertical-align: bottom;
           @media only screen and (max-width: 1060px) {
             height: auto;
+          }
+          @media only screen and (max-width: 520px) {
+            height: 100vh;
           }
         }
         figcaption {
@@ -494,6 +531,9 @@ $bar-spacing: 8px;
         display: inline-block; 
         overflow: hidden;
         margin: 0 0 0 30px;
+        @media only screen and (max-width: 1000px) {
+        margin: 0;
+      }
         h4 {
           color: #ffcc00;
           margin-bottom: 15px;
@@ -522,7 +562,6 @@ $bar-spacing: 8px;
   h3 {
     text-align: center;
     margin: 5px 0 30px 0;
-    font-weight: normal;
   }
   h6 {
     text-align: center;
@@ -595,18 +634,17 @@ $bar-spacing: 8px;
   width: 100%;
   h6 {
     text-align: center;
-    margin: 20px 0 0 0;
+    margin: 50px 0 0 0;
     text-transform: uppercase;
     color: #ffcc00;
   }
   h3 {
     text-align: center;
     margin: 5px 0 30px 0;
-    font-weight: normal;
   }
   .blog_wrapper {
     width: 85%;
-    margin: 50px auto;
+    margin: 0 auto 20px auto;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-column-gap: 30px;
@@ -617,10 +655,9 @@ $bar-spacing: 8px;
       overflow: hidden;
       width: 100%;
       height: auto;
-      display: block;
-      @media only screen and (max-width: 1015px) {
-        margin-bottom: 30px;
-      }
+      display: inline-block;
+      margin-bottom: 30px;
+      
       .thumbnail {
         position: relative;
         display: block;
@@ -1237,9 +1274,19 @@ footer {
 .accordeon {
   width: 100%;
   height: auto;
+  margin: 50px 0;
+  h3 {
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+  h6 {
+    color: #ffcc00;
+    text-align: center;
+    text-transform: uppercase;
+  }
   .accordeon_wrapper {
     width: 85%;
-    margin: 80px auto;
+    margin: auto;
     display: grid;
     grid-template-columns: 45% 45%;
     grid-column-gap: 100px;
@@ -1252,6 +1299,9 @@ footer {
         color: #fff;
         padding: 10px;
         cursor: pointer;
+        text-align: left;
+        text-transform: none;
+        letter-spacing: 1px;
         border: 3px solid #000;
         margin: 0 0 5px 0;
         &:after {
@@ -1472,6 +1522,68 @@ footer {
     }
   }
 }
+
+/*Albums page styles*/
+
+#albums {
+  margin-top: 100px;
+}
+
+.item_load_more {
+  display: none;
+}
+
+button.button_loadmore {
+  border: 2px solid #ffcc00;
+  padding: 12px 35px;
+  font-size: 1.6rem;
+  position: relative;
+  outline: none;
+  display: block;
+  cursor: pointer;
+  color: #000;
+  background-color: transparent;
+  margin: 30px auto 70px auto; 
+  &-swap_loadmore {
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 12px 35px;
+      font-size: 1.6rem;
+      box-sizing: border-box;
+      opacity: 0;
+      color: #fff;
+      transition: .5s ease;
+    }
+    &:before {
+      content: "";
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 0;
+      height: 100%;
+      background-color: #ffcc00;
+      transition: 0.5s ease;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+      span {
+        opacity: 1;
+      }
+    }
+  }        
+}
+
+.noContent {
+  pointer-events: none;
+}
+
+
 
 
 

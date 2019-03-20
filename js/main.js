@@ -21,7 +21,18 @@ $(document).ready(function () {
 // Sticky-kit plugin
 $(".about_box").stick_in_parent();
 
-//Accordeon
+// Load more button
+
+$(".item_load_more").slice(0, 6).show();
+$("#loadMore").on('click', function(e){
+	e.preventDefault();
+	$(".item_load_more:hidden").slice(0, 4).slideDown();
+	if($(".item_load_more:hidden").length == 0) {
+      $("#loadMore").text("No Content").addClass("noContent");
+    }
+})
+
+// Accordeon
 
 	var contents = $('.accordeon_content');
   var titles = $('.accordeon_title');
@@ -91,7 +102,7 @@ $(window).scroll(function() {
 
 //Input underline animation
 const wrapper = document.querySelector(".input-wrapper"),
-textInput = document.querySelector("input[type='email']");        
+textInput = document.querySelector("input#newsletter");        
 textInput.addEventListener("keyup", event => {
 	wrapper.setAttribute("data-text", event.target.value);
 });
