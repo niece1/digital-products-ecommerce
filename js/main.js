@@ -49,6 +49,78 @@ $("#loadMore").on('click', function(e){
     } 
   });
 
+  var i=0,
+      length = $("#imageGallery img").length;
+  
+  $("#imageGallery img").each(function(){
+    
+    i++;
+    $(this).attr("id", "image" + i);
+    
+  });
+  
+  $("#imageGallery img").click(function(){
+    
+    $("#modal").fadeIn();
+    
+    i=$(this).index()+1;
+    
+    $("#myImg").attr("src", $("#image" + i).attr("src"));
+    
+    $("#imgCounter").html(i + " of " + length);
+    
+  });
+  
+  $("#rarr").click(function(){
+    
+    i++;
+    $("#myImg").fadeOut(0, function(){
+      
+      $("#myImg").attr("src", $("#image" + i).attr("src")).fadeIn(0);
+      $("#imgCounter").html(i + " of " + length);
+      
+    });
+    
+    if(i>length){
+       i=1;
+       $("#myImg").fadeOut(0, function(){
+      
+          $("#myImg").attr("src", $("#image" + i).attr("src")).fadeIn(0);
+          $("#imgCounter").html(i + " of " + length);
+
+        });
+       }
+    
+  });
+  
+  $("#larr").click(function(){
+    
+    i--;
+    $("#myImg").fadeOut(0, function(){
+      
+      $("#myImg").attr("src", $("#image" + i).attr("src")).fadeIn(0);
+      $("#imgCounter").html(i + " of " + length);
+      
+    });
+    
+    if(i<1){
+       i=length;
+       $("#myImg").fadeOut(0, function(){
+      
+          $("#myImg").attr("src", $("#image" + i).attr("src")).fadeIn(0);
+          $("#imgCounter").html(i + " of " + length);
+
+        });
+       }
+    
+  });
+  
+  $("#close").click(function(){
+    
+    $("#modal").fadeOut()
+    
+  })
+
 	//Parallax
 $(window).scroll(function() {
 	var st = $(this).scrollTop();
