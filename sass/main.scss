@@ -90,7 +90,11 @@ $bar-spacing: 8px;
         letter-spacing: 2px;
         text-transform: uppercase;
         a {
-          color: #fff;          
+          color: #fff;
+          &:hover {
+            color: #ffcc00;
+            transition: all .5s ease-out;
+          }          
         }
       }
     }
@@ -104,6 +108,13 @@ $bar-spacing: 8px;
         text-transform: uppercase;
         a {
           color: #fff;
+          &:hover {
+            color: #ffcc00;
+            transition: all .5s ease-out;
+          }   
+        }
+        a.active {
+          color: #ffcc00;
         }
       }
     }
@@ -201,10 +212,11 @@ $bar-spacing: 8px;
       left: 20px;
       writing-mode: vertical-rl;
       transform: rotate(180deg);
-      font-size: 1.8rem;
+      font-size: 4rem;
       letter-spacing: 5px;
-      text-transform: uppercase;
+      
       color: #ffcc00;
+      font-family: 'Great Vibes', cursive;
     }
     ul#follow {
       position: absolute;
@@ -219,6 +231,10 @@ $bar-spacing: 8px;
         text-transform: uppercase;
         a {
           color: #fff;
+          &:hover {
+            color: #ffcc00;
+            transition: all .5s ease-out;
+          }  
         }
       }
     }
@@ -233,12 +249,17 @@ $bar-spacing: 8px;
       width: 100%;
       z-index: 9;
       position: absolute;
-      a {
-        text-transform: uppercase;
+      a {      
         letter-spacing: 2px;
-        font-size: 1.2rem;
+        font-size: 2.5rem;
         display: inline-block;
         margin: 20px;
+        font-family: 'Exo 2', sans-serif;
+        color: #fff;
+        &:hover {
+          color: #ffcc00;
+          transition: all .5s ease-out;
+        }  
       }
       .hamburger_wrapper {
         margin: 20px;
@@ -656,8 +677,7 @@ $bar-spacing: 8px;
       width: 100%;
       height: auto;
       display: inline-block;
-      margin-bottom: 30px;
-      
+      margin-bottom: 30px;   
       .thumbnail {
         position: relative;
         display: block;
@@ -755,6 +775,12 @@ $bar-spacing: 8px;
               color: #000;
               transition: all .5s ease;
              }
+          }
+          .blog_line {
+            width: 100%;
+            height: 1px;
+            margin: 15px 0;
+            background-color: #ffcc00;
           }
           p {
             padding: 5px 0;
@@ -1591,31 +1617,30 @@ button.button_loadmore {
   overflow-y: hidden;
   h3 {
     text-align: center;
-    margin: 5px 0 30px 0;
+    margin: 5px 0 0 0;
   }
   h6 {
     text-align: center;
     text-transform: uppercase;
-    margin: 20px 0 0 0;
     color: #ffcc00;
   }
   .album_container {
     width: 99%;
     margin: auto;
-    
-    @media only screen and (max-width: 1000px) {
-      grid-template-columns: auto auto;
-    }
-    @media only screen and (max-width: 750px) {
-      grid-template-columns: auto;
-    }
-    .album_item {
+    .album_items {
       display: grid;
       grid-gap: 7px;
       grid-template-columns: auto auto auto;
+      margin: 50px 0 10px 0;
+      @media only screen and (max-width: 1000px) {
+        grid-template-columns: auto auto;
+      }
+      @media only screen and (max-width: 750px) {
+        grid-template-columns: auto;
+    }
       img {
         width: 100%;
-        cursor: pointer;
+        cursor: crosshair;
         height: auto;
         vertical-align: middle;  
       }
@@ -1633,7 +1658,7 @@ button.button_loadmore {
   width: 100%;
   height: 100%;
   display: none;
-  padding: 50px 0 0 0;
+  padding: 60px 0 0 0;
 }
 .modal_navigation {
   position: absolute;
@@ -1641,28 +1666,25 @@ button.button_loadmore {
   display: inline-block;
   text-align: center;
   width: 100%;
+  margin-bottom: 20px;
 }
 #modal .modal_navigation button {
   
-  color: white;
+  color: #ffcc00;
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 3em;
-  
+  font-size: 4em; 
   background: none;
-  z-index: 30;
-
+  z-index: 20;
 }
 #close {
   
-  
-  font-size: 3em;
-  color: white;
+  margin: 0 50px;
+  font-size: 4em;
+  color: #ffcc00;
   cursor: pointer;
-  z-index: 40;
-  
-  
+  z-index: 20;
 }
 
 #imageWrapper {
@@ -1680,12 +1702,104 @@ button.button_loadmore {
   position: absolute;
   top: 0;
   right: 0;  
-  z-index: 9999;
+  z-index: 20;
   padding: 20px;
-  color: red;
+  color: #ffcc00;
   display: block;
-  font-size: 1.5em;
- 
+  font-size: 2.5em;
+}
+
+/*Blog single page styles*/
+
+.blog_single {
+  width: 100%;
+  height: auto;
+  .blog_single_wrapper {
+    width: 85%;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 65% 30%;
+    grid-column-gap: 100px;
+    .single_content {
+      .blog_item {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        display: inline-block;
+        margin-bottom: 30px; 
+        .thumbnail {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          img {
+            width: 100%;
+            display: block;
+            height: 100%;
+            vertical-align: middle;
+            transition: transform 500ms ease;
+          }
+        } 
+        .blogpost_content {
+          display: grid;
+          grid-template-columns: 20% 70%;
+          grid-column-gap: 30px;
+          margin: 30px 0 0 0;
+          .blog_date {
+            
+            border: 3px solid #000;
+            padding: 10px 16px;
+            text-align: center;
+            margin: 0 0 0 15px;
+            span#date {
+              font-weight: 600;
+              font-size: 3rem;
+              color: #000;
+            }
+            span {
+              color: #4e4e4e;
+              font-size: 1.2rem;
+              @media only screen and (max-width: 1015px) {
+                padding: 0 3px;
+              }
+            }
+          }
+          .blogpost_info {
+            margin-left: 10px;
+            padding: 0 0 10px 0;
+            h5 {
+              font-size: 1.8rem;
+            }
+            a {
+              color: #000;
+              &:hover {
+                color: #ffcc00;
+                transition: all .5s ease;
+              }
+              &:not(:hover) {
+                color: #000;
+                transition: all .5s ease;
+              }
+            }
+            .blog_line {
+              width: 100%;
+              height: 1px;
+              margin: 15px 0;
+              background-color: #ffcc00;
+            }
+          p {
+            padding: 5px 0;
+            color: #4e4e4e;
+          }
+          i {
+            color: #000;
+            font-size: 0.8rem;
+            margin: 0 7px;
+          }
+        }
+        }
+      }
+    }
+  }
 }
 
 
