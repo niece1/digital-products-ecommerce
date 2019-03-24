@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+  //Preloader
+  document.body.onload = function() {
+  setTimeout(function() {
+    var preloader = document.getElementById('gael_preloader');
+    if(!preloader.classList.contains('load_end')) {
+      preloader.classList.add('load_end');
+    }
+  }, 5000);
+}
+
  //Slick slider
  $(".main_slider").slick({
  	infinite:true,

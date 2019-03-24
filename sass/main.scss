@@ -52,6 +52,91 @@ $bar-width: 40px;
 $bar-height: 3px;
 $bar-spacing: 8px;
 
+.preloader {
+  background:#000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  z-index: 999;
+  #load {
+    position: absolute;
+    width: 600px;
+    height: 36px;
+    left: 50%;
+    top: 40%;
+    margin-left: -300px;
+    overflow: visible;
+    user-select: none;
+    cursor: default;
+    div {
+      position:absolute;
+      font-size: 5rem;
+      width: 20px;
+      height: 36px;
+      opacity: 0;
+      animation: move 2s linear infinite; 
+      transform: rotate(180deg);
+      color: #ffcc00;
+    }
+  }
+  &.load_end {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.preloader #load div:nth-child(2) {
+  animation-delay:0.2s;
+
+}
+.preloader #load div:nth-child(3) {
+  animation-delay:0.4s;
+
+}
+.preloader #load div:nth-child(4) {
+  animation-delay:0.6s;
+
+}
+.preloader #load div:nth-child(5) {
+  animation-delay:0.8s;
+
+}
+.preloader #load div:nth-child(6) {
+  animation-delay:1s;
+
+}
+.preloader #load div:nth-child(7) {
+  animation-delay:1.2s;
+ 
+}
+
+@keyframes move {
+  0% {
+    left:0;
+    opacity:0;
+  }
+    35% {
+        left: 41%;  
+        transform:rotate(0deg);
+        opacity:1;
+    }
+    65% {
+        left:59%;   
+        transform:rotate(0deg); 
+        opacity:1;
+    }
+    100% {
+        left:100%;  
+        transform:rotate(-180deg);
+        opacity:0;
+    }
+}
+
+
+
+
 /* Main Section Styles*/
 
 .main {
@@ -1745,21 +1830,24 @@ button.button_loadmore {
           grid-column-gap: 30px;
           margin: 30px 0 0 0;
           .blog_date {
-            
-            border: 3px solid #000;
-            padding: 10px 16px;
-            text-align: center;
-            margin: 0 0 0 15px;
-            span#date {
-              font-weight: 600;
-              font-size: 3rem;
-              color: #000;
-            }
-            span {
-              color: #4e4e4e;
-              font-size: 1.2rem;
-              @media only screen and (max-width: 1015px) {
-                padding: 0 3px;
+            .date_wrapper {
+              border: 3px solid #000;
+              display: inline-block;
+              padding: 10px 16px;
+              text-align: center;
+              margin: 0 0 0 15px;
+              span#date {
+                font-weight: 600;
+                font-size: 3rem;
+                color: #000;
+              }
+              span {
+                color: #4e4e4e;
+                font-size: 1.2rem;
+                margin: 0 2px;
+                @media only screen and (max-width: 1015px) {
+                  padding: 0 3px;
+                }
               }
             }
           }
@@ -1786,16 +1874,20 @@ button.button_loadmore {
               margin: 15px 0;
               background-color: #ffcc00;
             }
-          p {
-            padding: 5px 0;
-            color: #4e4e4e;
-          }
-          i {
-            color: #000;
-            font-size: 0.8rem;
-            margin: 0 7px;
+            p {
+              padding: 5px 0;
+              color: #4e4e4e;
+            }
+            i {
+              color: #000;
+              font-size: 0.8rem;
+              margin: 0 7px;
+            }
           }
         }
+        p {
+          text-indent: 30px;
+          margin: 0 0 0 15px;
         }
       }
     }
