@@ -52,6 +52,8 @@ $bar-width: 40px;
 $bar-height: 3px;
 $bar-spacing: 8px;
 
+/*Preloader styles*/
+
 .preloader {
   background:#000;
   position: fixed;
@@ -399,8 +401,7 @@ $bar-spacing: 8px;
           width: 100%;
           height: 100%;
           top: 0;
-          left: 0;
-          
+          left: 0;         
           background: rgba(0,0,0,.02);
         }
       }
@@ -665,9 +666,11 @@ $bar-spacing: 8px;
   width: 100%;
   position: relative;
   overflow-y: hidden;
-  h3 {
+  h5 {
     text-align: center;
     margin: 5px 0 30px 0;
+    text-transform: uppercase;
+
   }
   h6 {
     text-align: center;
@@ -698,12 +701,13 @@ $bar-spacing: 8px;
         }
         div {
           position: absolute;
-          background: rgba(255, 204, 0, 0.6);
-          color: #fff;
+          background: url(../img/dark_exa.png);
+          color: #ffcc00;
           width: 100%;
           height: 100%;
           z-index: 1;
-          font-size: 2rem;       
+          font-size: 2.5rem;
+          font-weight: 600;       
           &:before {
             content: "";
             width: 1%;
@@ -713,12 +717,12 @@ $bar-spacing: 8px;
           }
           &:after {
             content: "";
-            border: 2px solid #fff;
+            border: 2px solid #ffcc00;
             position: absolute;
-            top: 15px;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
+            top: 17px;
+            bottom: 17px;
+            left: 17px;
+            right: 17px;
           }
           .caption {
             display: inline-block;
@@ -744,9 +748,10 @@ $bar-spacing: 8px;
     text-transform: uppercase;
     color: #ffcc00;
   }
-  h3 {
+  h5 {
     text-align: center;
     margin: 5px 0 30px 0;
+    text-transform: uppercase;
   }
   .blog_wrapper {
     width: 85%;
@@ -756,7 +761,7 @@ $bar-spacing: 8px;
     grid-column-gap: 30px;
      @media only screen and (max-width: 1015px) {
       grid-template-columns: auto;
-     }
+    }
     .blog_item {
       overflow: hidden;
       width: 100%;
@@ -851,6 +856,8 @@ $bar-spacing: 8px;
             padding: 0 0 10px 0;
             h5 {
               font-size: 1.8rem;
+              text-align: left;
+              text-transform: none;
             }
             &:hover {
               color: #ffcc00;
@@ -1076,6 +1083,7 @@ footer {
     }
     .footer_twitter {
       padding: 30px 0 0 0;
+      position: relative;
       h6 {
         font-weight: normal;
       }
@@ -1089,6 +1097,18 @@ footer {
       }
       p#twitter_date {
         color: #fff;
+      }
+      .footer_slider {
+        position: relative;
+      }
+      .footer_slider_arrows {
+        position: absolute;
+        top: 68px;
+        right: 20px;
+        i {
+          font-size: 1.6rem;
+          cursor: pointer;
+        }
       }     
     }
   }
@@ -1105,20 +1125,76 @@ footer {
       grid-template-columns: 100%;
     }
     .footer_copyright {
-      padding: 30px 0;
+      padding: 15px 0;
       @media only screen and (max-width: 1267px) {
         padding: 30px 50px 30px 0;
       }
-      h6 {
-        font-weight: normal;
-        margin: 0 0 10px 0;
-        i {
-          color: #ffcc00;
-          margin: 0 10px 0 0;
+      .tooltip__trigger-text {
+        display: inline-block;
+        padding: 0.85em;
+        pointer-events: none;
+        h6 {
+          font-weight: normal;
+          margin: 0 0 10px 0;
+          a {
+            color: #fff;
+          }
         }
-        a {
-          color: #fff;
-        }
+      }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+      .tooltip__trigger {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+      }
+      .tooltip__base {
+        position: absolute;
+        bottom: -50%;
+        left: 10%;
+        margin-left: -50px;
+        width: 220px;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .tooltip__content {
+        color: #fff;
+        display: flex;
+        position: relative;
+        align-items: center;
+        font-size: 1.4rem;
+        width: 65%;
+        padding: 0 1em;
+        opacity: 0;
+      }
+      .tooltip__shape,
+      .tooltip__deco {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      .tooltip__shape {
+        fill: #ffcc00;
+      }
+      .tooltip--dori .tooltip__base {
+        bottom: -0.5em;
+      }
+      .tooltip--dori .tooltip__content {
+        margin: 0 0 1em;
+      }
+      i {
+        color: #ffcc00;
+        margin: 0 10px 0 0;
+        font-size: 1.8rem;
+        display: inline-block;
       }
       p {
         color: #9c9c9c;
@@ -1700,9 +1776,10 @@ button.button_loadmore {
   width: 100%;
   position: relative;
   overflow-y: hidden;
-  h3 {
+  h5 {
     text-align: center;
     margin: 5px 0 0 0;
+    text-transform: uppercase;
   }
   h6 {
     text-align: center;
@@ -1893,6 +1970,8 @@ button.button_loadmore {
     }
   }
 }
+
+
 
 
 

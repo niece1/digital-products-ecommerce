@@ -7,7 +7,7 @@ $(document).ready(function () {
     if(!preloader.classList.contains('load_end')) {
       preloader.classList.add('load_end');
     }
-  }, 5000);
+  }, 1000);
 }
 
  //Slick slider
@@ -20,12 +20,29 @@ $(document).ready(function () {
  	autoplay: true,
  	speed: 1200,
  	autoplaySpeed: 4000,
- 	pauseOnDotsHover:true,
- 	pauseOnHover:false,
+ 	pauseOnDotsHover: true,
+ 	pauseOnHover: false,
  	cssEase: 'ease',
  // vertical: true,
  prevArrow: $('#left_arrow'),
  nextArrow: $('#right_arrow')
+});
+
+ $(".footer_slider").slick({
+  infinite: true,
+  draggable: false,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  autoplay: true,
+  speed: 1200,
+  autoplaySpeed: 4000,
+  pauseOnDotsHover: true,
+  pauseOnHover: false,
+  cssEase: 'ease',
+
+ //prevArrow: $('#left_arrow'),
+ //nextArrow: $('#right_arrow')
 });
 
 // Sticky-kit plugin

@@ -14,13 +14,13 @@
 <body>
 	<div id="gael_preloader" class="preloader">
 		<div id="load">
-		  <div>G</div>
-		  <div>N</div>
-		  <div>I</div>
-		  <div>D</div>
-		  <div>A</div>
-		  <div>O</div>
-		  <div>L</div>
+			<div>G</div>
+			<div>N</div>
+			<div>I</div>
+			<div>D</div>
+			<div>A</div>
+			<div>O</div>
+			<div>L</div>
 		</div>
 	</div>
 	<section class="main">
@@ -180,12 +180,12 @@
 		
 	</section><!--/.About section-->
 
-<!--Portfolio section-->
+	<!--Portfolio section-->
 
 	<section class="portfolio">
 		
 		<h6>Choose an album</h6>
-		<h3>I chose the very best of my shots.</h3>
+		<h5>I chose the very best of my shots.</h5>
 		
 		<div class="portfolio_container aware_direction">
 
@@ -279,7 +279,7 @@
 
 	<section class="blog">
 		<h6>Latest post</h6>
-		<h3>News and Events</h3>
+		<h5>News and Events</h5>
 		<div class="blog_wrapper">
 
 			<div class="blog_item">
@@ -380,7 +380,7 @@
 	<footer>
 		<div class="footer_wrapper_upper">
 			<div class="footer_about">
-				<a href="#" class="footer_logo">Gael</a>
+				<a href="#" class="footer_logo">Gael</a>		
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis veniam unde tenetur ullam. Amet, reprehenderit ea nam voluptatibus quisquam harum!</p>
 				<a href="#"><span>Read more</span></a>
 			</div>
@@ -407,14 +407,48 @@
 			<div class="footer_twitter">
 				<h6>Twitter Feed</h6>
 				<p><i class="fab fa-twitter"></i>@gael</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo atque at soluta eaque deserunt, tempore, vero labore eos ea necessitatibus.</p>
-				<p id="twitter_date">05.03.2019</p>
+				<div class="footer_slider">
+					<div class="twitter_item">
+						
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo atque at soluta eaque deserunt, tempore, vero labore eos ea necessitatibus.</p>
+						<p id="twitter_date">05.03.2019</p>
+					</div>
+
+					<div class="twitter_item">
+						
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo atque at soluta eaque deserunt, tempore, vero labore eos ea necessitatibus.</p>
+						<p id="twitter_date">05.03.2019</p>
+					</div>
+
+					<div class="twitter_item">
+						
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo atque at soluta eaque deserunt, tempore, vero labore eos ea necessitatibus.</p>
+						<p id="twitter_date">05.03.2019</p>
+					</div>
+				</div>
+
+				<div class="footer_slider_arrows">
+					<i id="twitter_left" class="fas fa-long-arrow-alt-left"></i>								
+					<i id="twitter_right" class="fas fa-long-arrow-alt-right"></i>				
+			</div>
+
 			</div>
 		</div>
 
 		<div class="footer_wrapper_down">
 			<div class="footer_copyright">
-				<h6><i class="fas fa-globe"></i><a href="#">English</a></h6>
+				
+				<div class="tooltip tooltip--dori" data-type="dori">
+					<div class="tooltip__trigger" role="tooltip" aria-describedby="info-dori">
+						<i class="fas fa-globe"></i><span class="tooltip__trigger-text"><h6><a href="#">English</a></h6></span>
+					</div>
+					<div class="tooltip__base">
+						<svg class="tooltip__shape" width="100%" height="100%" viewBox="0 0 400 300">
+							<path d="M 22,108 22,236 C 22,236 64,216 103,212 142,208 184,212 184,212 L 200,229 216,212 C 216,212 258,207 297,212 336,217 378,236 378,236 L 378,108 C 378,108 318,83.7 200,83.7 82,83.7 22,108 22,108 Z"/>
+						</svg>
+						<div class="tooltip__content" id="info-dori">Switch to English</div>
+					</div>
+				</div>
 				<p>	&#169; Copyright 2019 Gael. Powered by NoaSoft.</p>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, repellendus.</p>
 			</div>
@@ -441,6 +475,9 @@
 	<script src="js/classie.js"></script>
 	<script src="js/hoverdir.js"></script>
 	<script src="js/counter.js"></script>
+	<script src="js/anime.min.js"></script>
+	<script src="js/charming.min.js"></script>
+	<script src="js/toltips.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
