@@ -16,7 +16,7 @@ $(document).ready(function () {
  	draggable: false,
  	fade: true,
  	dots: false,
- 	arrows: true,
+ 	
  	autoplay: true,
  	speed: 1200,
  	autoplaySpeed: 4000,
@@ -33,7 +33,7 @@ $(document).ready(function () {
   draggable: false,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows: true,
+  
   autoplay: true,
   speed: 1200,
   autoplaySpeed: 4000,
@@ -41,8 +41,8 @@ $(document).ready(function () {
   pauseOnHover: false,
   cssEase: 'ease',
 
- //prevArrow: $('#left_arrow'),
- //nextArrow: $('#right_arrow')
+ prevArrow: $('#twitter_left'),
+ nextArrow: $('#twitter_right')
 });
 
 // Sticky-kit plugin
