@@ -199,9 +199,16 @@ $(window).scroll(function() {
 	closeBttn.addEventListener( 'click', toggleOverlay );
 })();
 
-//Input underline animation
+//Input footer newsletter underline animation
 const wrapper = document.querySelector(".input-wrapper"),
 textInput = document.querySelector("input#newsletter");        
 textInput.addEventListener("keyup", event => {
 	wrapper.setAttribute("data-text", event.target.value);
+});
+
+//Input search sidebar underline animation
+const wrap = document.querySelector(".input-search"),
+textsearch = document.querySelector("input#search");        
+textsearch.addEventListener("keyup", event => {
+  wrap.setAttribute("data-text", event.target.value);
 });
