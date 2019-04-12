@@ -2639,6 +2639,12 @@ button.button_loadmore-swap_loadmore:hover span {
   }
 }
 
+@media only screen and (max-width: 700px) {
+  .blog_single .blog_single_wrapper .sidebar .search_widget form.input-search input {
+    width: 70%;
+  }
+}
+
 .blog_single .blog_single_wrapper .sidebar .search_widget form.input-search input::-webkit-input-placeholder {
   color: #ffcc00;
 }
