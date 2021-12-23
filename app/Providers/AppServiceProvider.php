@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('*', function ($view) {
-            $view->with('cart', Cart::where('session_id', session()->getId())->first());
+            $view->with('cart', Cart::withSession()->first());
         });
     }
 }

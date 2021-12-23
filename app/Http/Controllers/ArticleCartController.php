@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Cart;
 
-class CartArticleController extends Controller
+class ArticleCartController extends Controller
 {
     public function store(Request $request)
     {
@@ -16,6 +16,13 @@ class CartArticleController extends Controller
             'session_id' => session()->getId()
         ]);
         $cart->articles()->syncWithoutDetaching($article);
+
+        return back();
+    }
+    
+    public function destroy(Article $article)
+    {
+        $cart = Cart::withSession()->first()->articles()->detach($article);
 
         return back();
     }

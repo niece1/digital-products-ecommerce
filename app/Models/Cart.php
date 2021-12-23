@@ -14,9 +14,18 @@ class Cart extends Model
         'session_id'
     ];
     
+    public function scopeWithSession()
+    {
+        return $this->where('session_id', session()->getId())->latest();
+    }
+    
     public function articles()
     {
-        return $this->belongsToMany(Article::class)
-            ->withTimestamps();
+        return $this->belongsToMany(Article::class)->withTimestamps();
+    }
+    
+    public function totalAmount()
+    {
+        return $this->articles->sum('price');
     }
 }

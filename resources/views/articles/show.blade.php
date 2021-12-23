@@ -13,11 +13,11 @@
                     <!--<div>@money($article->price)</div>-->
                     <p>{{ $article->description }}</p>
                     <form action="{{ route('cart.articles.store') }}" method="post">
-                        @csrf
                         <input type="hidden" name="article_id" value="{{ $article->id }}">
                         <x-button class="mt-3">
                             Add to cart
                         </x-button>
+                        @csrf
                     </form>
                 </div>
             </div>

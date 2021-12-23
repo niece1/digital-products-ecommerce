@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\CartArticleController;
+use App\Http\Controllers\ArticleCartController;
 use App\Http\Controllers\CartController;
 
 /*
@@ -19,7 +19,9 @@ use App\Http\Controllers\CartController;
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/articles/{article:slug}', [ArticleController::class, 'show'])->name('articles.show');
-Route::post('/cart/articles', [CartArticleController::class, 'store'])->name('cart.articles.store');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/articles', [ArticleCartController::class, 'store'])->name('cart.articles.store');
+Route::delete('/cart/articles/{article:slug}', [ArticleCartController::class, 'destroy'])->name('cart.articles.destroy');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 
 require __DIR__.'/auth.php';
