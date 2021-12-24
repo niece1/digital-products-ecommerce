@@ -14,6 +14,7 @@
                             <div class="font-semibold">
                                 {{ $article->title }}
                             </div>
+                            <div>@cost($article->price)</div>
                             <form action="{{ route('cart.articles.destroy', $article) }}" method="post">
                                 @csrf
                                 @method('DELETE')
@@ -22,7 +23,7 @@
                         </div>
                     @endforeach
                     <div class="mt-4">
-                        <div class="mb-2">Cart total: @money($cart->total())</div>
+                        <div class="mb-2">Total: @cost($cart->totalAmount())</div>
                         <x-link-button :href="route('checkout.index')">
                             Checkout
                         </x-link-button>

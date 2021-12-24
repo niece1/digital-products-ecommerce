@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
-                       {{ __('Cart') }}{{ optional(optional($cart)->articles)->count() ?? 0 }}
+                       {{ __('Cart') }}-{{ optional(optional($cart)->articles)->count() ?? 0 }}
                     </x-nav-link>
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Articles') }}
