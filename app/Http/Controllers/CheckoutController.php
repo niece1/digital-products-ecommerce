@@ -16,7 +16,7 @@ class CheckoutController extends Controller
     {
         $cart = Cart::withSession()->first();
         $checkout = $request->user()->checkout($cart->articles->pluck('stripe_id')->toArray(), [
-            
+            'success_url' => route('orders.index'),
             'cancel_url' => route('cart.index'),
         ]);
 

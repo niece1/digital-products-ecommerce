@@ -13,4 +13,9 @@ class Order extends Model
     {
         return $this->belongsToMany(Article::class);
     }
+    
+    public function totalAmount()
+    {
+        return $this->articles->sum('price');
+    }
 }
