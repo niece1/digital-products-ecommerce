@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticleCartController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\WebhookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +26,6 @@ Route::post('/cart/articles', [ArticleCartController::class, 'store'])->name('ca
 Route::delete('/cart/articles/{article:slug}', [ArticleCartController::class, 'destroy'])->name('cart.articles.destroy');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
 
 require __DIR__.'/auth.php';
