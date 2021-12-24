@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticleCartController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,6 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/articles', [ArticleCartController::class, 'store'])->name('cart.articles.store');
 Route::delete('/cart/articles/{article:slug}', [ArticleCartController::class, 'destroy'])->name('cart.articles.destroy');
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 
 require __DIR__.'/auth.php';

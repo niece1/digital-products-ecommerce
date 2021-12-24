@@ -24,9 +24,9 @@
                     @endforeach
                     <div class="mt-4">
                         <div class="mb-2">Total: @cost($cart->totalAmount())</div>
-                        <x-link-button :href="route('checkout.index')">
+                        <x-link :href="route('checkout.index')">
                             Checkout
-                        </x-link-button>
+                        </x-link>
                     </div>
                 @else
                     <p>Cart is empty</p>
