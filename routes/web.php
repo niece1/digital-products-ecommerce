@@ -8,6 +8,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WebhookController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\DownloadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,6 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
 Route::post('/stripe/webhook', [WebhookController::class, 'handleWebhook']);
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+Route::get('/articles/downloads/{article:slug}', [DownloadController::class, 'show'])->name('articles.downloads.show');
 
 require __DIR__.'/auth.php';
