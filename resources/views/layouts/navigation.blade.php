@@ -18,6 +18,14 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Articles') }}
                     </x-nav-link>
+                    @guest
+                    <x-nav-link :href="route('login')">
+                        {{ __('Sign in') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('register')">
+                        {{ __('Sign up') }}
+                    </x-nav-link>
+                    @endguest
                 </div>
             </div>
 
@@ -71,10 +79,27 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                {{ __('Home') }}
+            <x-responsive-nav-link :href="route('cart.index')" :active="request()->routeIs('cart.index')">
+                {{ __('Cart') }}
             </x-responsive-nav-link>
         </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Articles') }}
+            </x-responsive-nav-link>
+        </div>
+        @guest
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('login')">
+                {{ __('Sign in') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('register')">
+                {{ __('Sign up') }}
+            </x-responsive-nav-link>
+        </div>
+        @endguest
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">

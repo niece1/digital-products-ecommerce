@@ -54,7 +54,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request)
     {
-        $cart = Cart::bySession()->first();
+        $cart = Cart::withSession()->first();
         
         Auth::guard('web')->logout();
 

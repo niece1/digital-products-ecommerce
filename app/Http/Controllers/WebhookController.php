@@ -13,7 +13,7 @@ class WebhookController extends CashierWebhookController
         if ($user = $this->getUserByStripeId($payload['data']['object']['customer'])) {
             $cart = $user->cart;
             $order = $user->orders()->create();
-            $order->products()->attach($cart->products);
+            $order->articles()->attach($cart->articles);
             $cart->fresh()->delete();
         }
     }

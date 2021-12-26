@@ -11,7 +11,6 @@
                 @foreach($orders as $order)
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 mb-4">
                         <div class="font-semibold mb-2">Order #{{ $order->id }}</div>
-
                         <div class="mb-2">
                             @foreach($order->articles as $article)
                                 <div>{{ $article->title }} 
