@@ -7,11 +7,22 @@ use App\Models\Cart;
 
 class CheckoutController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware(['auth']);
     }
-    
+
+    /**
+     * Get articles for checkout.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
         $cart = Cart::withSession()->first();

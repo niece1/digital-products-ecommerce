@@ -31,18 +31,18 @@ class AuthenticatedSessionController extends Controller
     {
         //pluck session id
         $cart = Cart::withSession()->first();
-        
+
         $request->authenticate();
 
         $request->session()->regenerate();
-        
+
         //optional() due cart may be null, needs to save cart articles available after login,
         //because session must be changed to match current session after we have authenticated
         optional($cart)->update([
-            'session_id' => session()->getId(), 
+            'session_id' => session()->getId(),
             'user_id' => auth()->id()
         ]);
-        
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -55,13 +55,13 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request)
     {
         $cart = Cart::withSession()->first();
-        
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-        
+
         optional($cart)->update([
             'session_id' => session()->getId(),
         ]);

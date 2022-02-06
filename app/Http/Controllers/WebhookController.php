@@ -7,6 +7,12 @@ use Laravel\Cashier\Http\Controllers\WebhookController as CashierWebhookControll
 
 class WebhookController extends CashierWebhookController
 {
+    /**
+     * Handle a checkout.
+     *
+     * @param  array  $payload
+     * @return void
+     */
     public function handleCheckoutSessionCompleted($payload)
     {
         //copied from Cashier WebhookController

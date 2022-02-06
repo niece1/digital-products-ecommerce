@@ -8,6 +8,12 @@ use App\Models\Cart;
 
 class ArticleCartController extends Controller
 {
+    /**
+     * Store a new article.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $article = Article::findOrFail($request->article_id);
@@ -19,7 +25,13 @@ class ArticleCartController extends Controller
 
         return back();
     }
-    
+
+    /**
+     * Delete an article.
+     *
+     * @param  \App\Models\Article $article
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Article $article)
     {
         $cart = Cart::withSession()->first()->articles()->detach($article);

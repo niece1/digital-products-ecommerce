@@ -9,11 +9,23 @@ use App\Models\Article;
 
 class DownloadController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware(['auth']);
     }
-    
+
+    /**
+     * Download a file.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Article $article
+     * @return \Illuminate\Http\Response
+     */
     public function show(Request $request, Article $article)
     {
         // one can use different ways to protect unpaid downloads: if statements, policies etc

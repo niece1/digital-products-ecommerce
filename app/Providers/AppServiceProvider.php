@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             $view->with('cart', Cart::withSession()->first());
         });
-        
+
         Blade::directive('cost', function ($expression) {
             return "<?php echo Laravel\Cashier\Cashier::formatAmount($expression, config('cashier.currency')); ?>";
         });
