@@ -8,24 +8,21 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @if($orders->count())
-                @foreach($orders as $order)
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 mb-4">
-                        <div class="font-semibold mb-2">Order #{{ $order->id }}</div>
-                        <div class="mb-2">
-                            @foreach($order->articles as $article)
-                                <div>{{ $article->title }} 
-                                    <a href="{{ route('articles.downloads.show', $article) }}" class="text-indigo-500">
-                                        Download
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
-
-                        <div>
-                            Total: @cost($order->totalAmount())
-                        </div>
+            @foreach($orders as $order)
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 mb-4">
+                <div class="font-semibold mb-2">Order #{{ $order->id }}</div>
+                <div class="mb-2">
+                    @foreach($order->articles as $article)
+                    <div>{{ $article->title }} 
+                        <a href="{{ route('articles.downloads.show', $article) }}" class="text-indigo-500">
+                            Download
+                        </a>
                     </div>
-                @endforeach
+                    @endforeach
+                </div>
+                <div>Total: @cost($order->totalAmount())</div>
+            </div>
+            @endforeach
             @else
                 <p>You have no orders</p>
             @endif
